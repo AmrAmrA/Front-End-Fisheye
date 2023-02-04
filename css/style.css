@@ -3,6 +3,8 @@
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -45,6 +47,8 @@ h1 {
 }
 
 .photographer_section article img {
-    height: 200px;
-    width: 200px;
+    width: 206px;
+    height: 208px;
+    object-fit: cover;
+    border-radius: 50%;
 }
