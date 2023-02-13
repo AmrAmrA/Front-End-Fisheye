@@ -1,3 +1,55 @@
+body {
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+.logo {
+    height: 50px;
+    margin-left: 100px;
+}
+
+
+
+
+article {
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 55px;
+
+}
+
+article h1 {
+    font-size: 42px;
+    color: #D3573C; 
+}
+
+article img  {
+    height: 193px;
+    width: 212px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+article p.location {
+    color: #901C1C;
+}
+
+
+/* Old Import  */
+
 #contact_modal {
     display: none;
 }
@@ -38,24 +90,14 @@
     width: 100%;
 }
 
-.modal header img {
-    cursor: pointer;
-    width: 100%;
-    border-radius: 50%;
-}
+
 
 .modal header h2 {
     font-size: 64px;
     font-weight: normal;
     text-align: center;
 }
-main img {
-    object-fit: cover;
-    width: 206px;
-    height: 208px;
-    object-fit: cover;
-    border-radius: 50%;
-}
+
 
 form {
     display: flex;
@@ -83,4 +125,3 @@ form input {
     border: none;
     border-radius: 5px;
 }
-
