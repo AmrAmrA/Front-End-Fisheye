@@ -46,9 +46,10 @@ h1 {
     font-size: 36px;
 }
 
-.photographer_section article img {
-    width: 206px;
-    height: 208px;
-    object-fit: cover;
-    border-radius: 50%;
+article a {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-decoration: none;
 }

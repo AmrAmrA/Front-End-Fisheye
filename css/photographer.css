@@ -50,10 +50,11 @@
     text-align: center;
 }
 main img {
-    width: 100px;
-    border-radius: 50%;
-    height: 100px;
     object-fit: cover;
+    width: 206px;
+    height: 208px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 form {
@@ -82,3 +83,4 @@ form input {
     border: none;
     border-radius: 5px;
 }
+
