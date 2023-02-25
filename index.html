@@ -9,20 +9,19 @@
   </head>
   <body>
     <header>
-        <a href="index.html">
+        <a href="index.html" tabindex="0">
           <img src="assets/images/logo.png" class="logo"  alt="Fisheye home page">
         </a>
-        <h1>Nos photographes</h1>
+        <h1 tabindex="0">Nos photographes</h1>
     </header>
     <main id="main">
         <div class="photographer_section" role="list"></div>
     </main>
+    <script src="scripts/pages/index.js"></script>
     <!--- Factories  --->
     <script src="scripts/factories/photographer.js"></script>
     <!--- Models  --->
     <script src="scripts/models/allPhotographers.js"></script>
-    <script src="scripts/models/onePhotographer.js"></script>
 
-    <script src="scripts/pages/index.js"></script>
   </body>
 </html>

@@ -10,18 +10,14 @@ class onePhotographer{
   
     getUserCardDOM() {
       // Creating DOM elements
-      const article = document.createElement( 'article' );
-      article.setAttribute('role', 'listitem');
+      const article = document.querySelector( 'article' );
+      const buttonContart = document.querySelector( '.header__button' );
       const img = document.createElement( 'img' );
       const h1 = document.createElement( 'h1' );
       const taglinePhotographer = document.createElement( 'p' );
       const locationPhotographer = document.createElement( 'p' );
       locationPhotographer.classList.add('location');
-      const button = document.createElement( 'button' );
-      button.setAttribute('aria-label', 'Contactez-moi');
-      button.setAttribute('role', 'button');
-      button.textContent = 'Contactez-moi';
-      button.classList.add('contact_button');
+     
 
       const firstdiv = document.createElement( 'div' ); 
       firstdiv.classList.add('firstdiv');
@@ -39,7 +35,7 @@ class onePhotographer{
       firstdiv.appendChild(h1);
       firstdiv.appendChild(locationPhotographer);
       firstdiv.appendChild(taglinePhotographer);
-      seconddiv.appendChild(button);
+      seconddiv.appendChild(buttonContart);
       thirddiv.appendChild(img);
 
       article.appendChild(firstdiv);

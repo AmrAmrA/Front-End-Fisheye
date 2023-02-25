@@ -4,13 +4,14 @@ class photographerFactory {
       if (type === 'allPhotographers') {
           return new allPhotographers(data)
           //  show me one photographer
-    
-      } else if (type === 'onePhotographer') {
+      } 
+      
+      if (type === 'onePhotographer') {
           return new onePhotographer(data)
       } 
     //   Launch an error if the type is not correct
-      else {
-          throw 'Unknown type format'
-      }
+      
+      throw 'Unknown type format'
+     
   }
 }

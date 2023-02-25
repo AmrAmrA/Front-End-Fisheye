@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="FR">
   <head>
-    <link href="css/photographer.css" rel="stylesheet" type="text/css">
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
+    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Fisheye - photographe</title>
   </head>
   <body>
     <header>
@@ -15,29 +18,76 @@
     </header>
     <main id="main">
       <div class="photograph-header">
+        <article role="listitem"></article>
+        <button class="contact_button header__button"> Contactez-moi </button>
       </div>
+      <section class="photograph__portfolio"></section>
     </main>
+    <div class="globalFilter"></div>
     <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" />
+      <div class="modal">
+        <header>
+          <h2 class="contact__title">Contactez-moi</h2>
+          <img src="assets/icons/close.svg"  class="cross__close"/>
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <!--- Factories  --->
-    <script src="scripts/factories/photographer.js"></script>
-    <!--- Models  --->
-    <script src="scripts/models/allPhotographers.js"></script>
-    <script src="scripts/models/onePhotographer.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
+        <form>
+          <div>
+            <label for="firstname">Prénom</label>
+            <input 
+              type="text" 
+              name="firstname" 
+              placeholder="Prénom" 
+              minlength="2"
+              maxlength="24"
+              autocomplete="off"
+              required
+            />
+          </div>
 
+          <div>
+            <label for="lastname">Nom</label>
+            <input 
+              type="text" 
+              name="lastname" 
+              placeholder="Nom" 
+              minlength="2"
+              maxlength="24"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input 
+              type="email" 
+              name="email" 
+              placeholder="Email" 
+              minlength="2"
+              maxlength="24"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="message">Votre Message</label>
+            <textarea 
+              name="message" 
+              placeholder="Votre message" 
+              minlength="2"
+              maxlength="500"
+              autocomplete="off"
+              required
+            ></textarea>
+          <button class="contact_button">Envoyer</button>
+        </form>
+      </div>
+    </div>
+    <!--- Factories  --->
+    <script src="scripts/models/onePhotographer.js" defer></script>
+    <script src="scripts/pages/photographer.js" ></script>
+    <script src="scripts/factories/photographer.js" ></script>
+    <!--- Models  --->
   </body>
 </html>

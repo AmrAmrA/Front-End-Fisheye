@@ -1,39 +1,43 @@
 let PhotographerId = new URLSearchParams(window.location.search).get("id");
-console.log(PhotographerId);
-async function getPhotographers() {
-    try {
-        const response = await fetch("data/photographers.json");
-        const photographers = await response.json();
-        console.log(photographers.media[0].photographerId);
-        return photographers;
-        
-    } catch (error) {
-        console.error(error);
-        return; 
-    }
-}
 
-
-async function displayData(photographers) {
-
-    let photographersSection = document.querySelector(".photograph-header");
-    for (let photographPage of photographers) {
+function displayData() {
+  fetch("data/photographers.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let photographersSection = document.querySelector(".photograph-header");
+      for (let photographPage of data.photographers) {
+        console.log(photographPage);
         if (photographPage.id == PhotographerId) {
-    
-            const photographeModel = new photographerFactory(photographPage, 'onePhotographer');
-            const userCardDOM = photographeModel.getUserCardDOM();
-            photographersSection.appendChild(userCardDOM);
-          
+          const { name } = photographPage;
+          const photographeModel = new photographerFactory(
+            photographPage,
+            "onePhotographer"
+          );
+          const userCardDOM = photographeModel.getUserCardDOM();
+          photographersSection.appendChild(userCardDOM);
+          const contactTitle = document.querySelector(".contact__title");
+          contactTitle.textContent = `Contactez-moi ${name}`;
         }
-    }
+      }
+    });
 }
 
+displayData();
+
+const headerButton = document.querySelector(".header__button");
+
+const contact_modal = document.querySelector("#contact_modal");
+const globalFilter = document.querySelector(".globalFilter");
+const crossClose = document.querySelector(".cross__close");
+console.log(crossClose);
+
+headerButton.addEventListener("click", function () {
+  contact_modal.style.display = "block";
+  globalFilter.classList.toggle('toggleVisibility')
+});
 
 
-async function init() {
-    // Récupère les datas des photographes
-    const { photographers } = await getPhotographers();
-    displayData(photographers);
-};
-
-init();
+crossClose.addEventListener("click", function () {
+  contact_modal.style.display = "none";
+  globalFilter.classList.toggle('toggleVisibility')
+});

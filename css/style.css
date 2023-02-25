@@ -1,4 +1,4 @@
-body {
+body, html, *, *::before, *::after {
     font-family: "DM Sans", sans-serif;
     margin: 0;
     padding: 0;
@@ -50,6 +50,9 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 text-decoration: none;
+}
+article :nth-child(2) {
+    color: #901C1C;
 }
 
 /* Old Import  */
