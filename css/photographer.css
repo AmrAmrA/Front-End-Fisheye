@@ -49,21 +49,19 @@ article p.location {
 /* Old Import  */
 
 #contact_modal {
-  display: block;
-  top: 49px;
+  top: 25px;
   position: absolute;
-  z-index: 20;
-  background-color: rgb(219, 136, 118);
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
   left: 50%;
   right: 50%;
+  z-index: 20;
+  background-color: rgb(219, 136, 118);
+  margin: auto;
   transform: translate(-50%);
   width: 670px;
-  height: 900px;
+  min-height: 700px;
+  max-height: 120%;
   display: none;
+  border-radius: 5px;
 }
 
 .photograph-header {
@@ -108,28 +106,30 @@ article p.location {
 .modal {
   display: flex;
   flex-direction: column;
-  padding: 24px 20px;
+  padding: 18px 20px;
   margin: auto;
 }
 
 .modal header {
   display: flex;
   width: 100%;
-  margin-bottom: 75px;
+  margin-bottom: 45px;
   align-items: center;
 }
 
 .modal header h2 {
-  font-size: 49px;
+  font-size: 40px;
   font-weight: 900;
   text-align: left;
   align-self: baseline;
-  width: 90%;
+  width: 95%;
 }
 
 .modal header img {
   align-self: baseline;
   cursor: pointer;
+  width: 30px;
+  height: 30px;
 }
 
 form {
@@ -141,8 +141,9 @@ form {
 
 form label {
   color: #312e2e;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 400;
+  margin-bottom: 5px;
 }
 
 form div {
@@ -153,8 +154,7 @@ form div {
 }
 .error__data {
   color: #000000;
-  font-size: 20px;
-  margin-top: 5px;
+  font-size: 17px;
   display: none;
 }
 
@@ -164,11 +164,15 @@ textarea {
   height: 57px;
   border: none;
   border-radius: 5px;
-  margin: 0px 0px 0px 0px;
+  margin: 0px 0px 5px 0px;
   font-size: 25px;
   outline: none;
 }
 textarea {
   height: 200px;
   resize: none;
+}
+.userMessage {
+  margin-bottom: 25px;
+  
 }

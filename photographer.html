@@ -32,27 +32,29 @@
       <form>
         <div>
           <label for="firstname">Prénom</label>
-          <input type="text" name="firstname" class="text__control" id="firstName" minlength="2" maxlength="24" autocomplete="off" required />
+          <input type="text" name="firstname" class="text__control" id="firstName" minlength="2" maxlength="24" autocomplete="off"  />
         </div>
         <span class="error__firstname error__data">Veuillez entrer 2 caractères minimum pour le champ Prénom</span>
 
         <div>
           <label for="lastname">Nom</label>
-          <input type="text" name="lastname" class="text__control" id="lastName" minlength="2" maxlength="24" autocomplete="off" required />
+          <input type="text" name="lastname" class="text__control" id="lastName" minlength="2" maxlength="24" autocomplete="off"  />
         </div>
         <span class="error__lastname error__data">Veuillez entrer 2 caractères minimum pour le champ Nom</span>
 
         <div>
           <label for="email">Email</label>
-          <input type="email" name="email" class="text__control" id="email" minlength="2" maxlength="24" autocomplete="off" required />
+          <input type="email" name="email" class="text__control" id="email" minlength="2" maxlength="24" autocomplete="off"  />
         </div>
         <span class="error__mail error__data">Veuillez entrer un mail valide</span>
 
         <div>
           <label for="message">Votre Message</label>
-          <textarea name="message" minlength="2" class="text__control" id="message" maxlength="500" autocomplete="off" required></textarea>
+          <div class="userMessage">
+            <textarea name="message" minlength="2" class="text__control" id="message" maxlength="500" autocomplete="off" ></textarea>
+            <span class="error__message error__data">Votre texte n'est pas valide</span>
+          </div>
           <button type="submit" class="contact_button">Envoyer</button>
-          <span class="error__message error__data">Votre texte n'est pas valide</span>
       </form>
     </div>
   </div>

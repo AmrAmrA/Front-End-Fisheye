@@ -28,30 +28,35 @@ const headerButton = document.querySelector(".header__button");
 const contact_modal = document.querySelector("#contact_modal");
 const globalFilter = document.querySelector(".globalFilter");
 const crossClose = document.querySelector(".cross__close");
-console.log(crossClose);
+
 
 headerButton.addEventListener("click", function () {
   contact_modal.style.display = "block";
-  globalFilter.classList.toggle('toggleVisibility')
+  globalFilter.classList.toggle("toggleVisibility");
 });
-
 
 crossClose.addEventListener("click", function () {
   contact_modal.style.display = "none";
-  globalFilter.classList.toggle('toggleVisibility')
+  globalFilter.classList.toggle("toggleVisibility");
 });
 
-let firstnameInput = document.querySelector("#firstName");
-let lastNameInput = document.querySelector("#lastName");
-let mailInput = document.querySelector("#email");
+const firstnameInput = document.querySelector("#firstName");
+const lastNameInput = document.querySelector("#lastName");
+const mailInput = document.querySelector("#email");
+const messageArea = document.querySelector("#message");
+const form = document.querySelector("form");
 
-console.log(firstnameInput, lastNameInput, mailInput);
+
 firstnameInput.addEventListener("blur", firstNameValidation);
 firstnameInput.addEventListener("input", firstNameValidation);
 lastNameInput.addEventListener("blur", lastNameValidation);
 lastNameInput.addEventListener("input", lastNameValidation);
 mailInput.addEventListener("blur", mailValidation);
 mailInput.addEventListener("input", mailValidation);
+messageArea.addEventListener("blur", messageValidation);
+messageArea.addEventListener("input", messageValidation);
+const allInputs = document.querySelectorAll("input");
+form.addEventListener("submit", handleFormSubmit);
 const errorMessages = document.querySelectorAll(".error__data");
 const controlText = document.querySelectorAll(".text__control");
 
@@ -59,18 +64,19 @@ const inputsValidities = {
   firstName: false,
   lastName: false,
   email: false,
+  message: false,
 };
 
 function showValidation({ index, validation }) {
   if (validation) {
     errorMessages[index].style.display = "none";
     if (controlText[index]) {
-      controlText[index].style.border = "7px solid green";
+      controlText[index].style.border = "5px solid green";
     }
   } else {
     errorMessages[index].style.display = "block";
     if (controlText[index]) {
-      controlText[index].style.border = "7px solid red";
+      controlText[index].style.border = "5px solid red";
     }
   }
 }
@@ -113,5 +119,49 @@ function mailValidation() {
   } else {
     showValidation({ index: 2, validation: true });
     inputsValidities.email = true;
+  }
+}
+// Function to check if message is valid
+function messageValidation() {
+  if (messageArea.value.length < 10) {
+    showValidation({ index: 3, validation: false });
+    inputsValidities.message = false;
+  } else {
+    showValidation({ index: 3, validation: true });
+    inputsValidities.message = true;
+  }
+}
+
+// function to submit the form
+function handleFormSubmit(event) {
+  event.preventDefault();
+  const keys = Object.keys(inputsValidities);
+  const keysFailed = keys.filter((key) => {
+    if (!inputsValidities[key]) return key;
+  });
+
+  if (keysFailed.length) {
+    keysFailed.forEach((key) => {
+      const index = keys.indexOf(key);
+      showValidation({ index, validation: false });
+    });
+  } else {
+    // Show user's informations
+    console.log(
+      "firstName :",
+      firstnameInput.value,
+      "lastName :",
+      lastNameInput.value,
+      "email :",
+      mailInput.value,
+      "message :",
+      messageArea.value
+    );
+    form.reset();
+    controlText.forEach((input) => {
+      input.style.border = "none";
+    });
+    contact_modal.style.display = "none";
+    globalFilter.classList.toggle("toggleVisibility");
   }
 }
