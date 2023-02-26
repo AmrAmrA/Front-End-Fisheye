@@ -1,13 +1,14 @@
 class mediaFactory {
     constructor(data) {
-        const { title, image, video, likes } = data;
+        const { title, image, video, likes, id, photographerId } = data;
         this._title         = title;
-        this._picture       = image ? `data/photographers.json/${image}` : `data/photographers.json/${video}`;
+        this._picture       = image ? `medias/${image}` : `medias/${video}`;
         this._likes         = likes;
-    }
-
-
-
+        this._id            = id;
+        this._photographerId = photographerId;
+  
+    }; 
+    
     getuserGalleryCard(){
         const article = document.createElement( 'article' );
         const img = document.createElement( 'img' );

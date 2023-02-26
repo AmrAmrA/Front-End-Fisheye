@@ -15,7 +15,6 @@ function displayData() {
           const userCardDOM = photographeModel.getUserCardDOM();
           photographersSection.appendChild(userCardDOM);
           const contactTitle = document.querySelector(".contact__title");
-          console.log(contactTitle);
           contactTitle.innerHTML = `
           <h2 class="contact__title">Contactez-moi <br> ${name}</h2>`
           contact_modal.setAttribute('name', `Contactez-moi ${name}`);
@@ -26,3 +25,18 @@ function displayData() {
 
 displayData();
 
+function displayMedia () {
+  fetch("data/photographers.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const mediaSection = document.querySelector(".photograph__medias");
+      for (let media of data.media) {
+        if (media.photographerId == PhotographerId) {
+          const mediaModel = new mediaFactory(media);
+          const mediaCardDOM = mediaModel.getuserGalleryCard();
+          mediaSection.appendChild(mediaCardDOM);
+        }
+      }
+    });
+}
+displayMedia();
