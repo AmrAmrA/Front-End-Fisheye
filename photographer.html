@@ -1,93 +1,66 @@
 <!DOCTYPE html>
 <html lang="FR">
-  <head>
-    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
-    <link
-      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <title>Fisheye - photographe</title>
-  </head>
-  <body>
-    <header>
-      <a href="index.html">
-        <img src="assets/images/logo.png" class="logo" />
-      </a>
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-        <article role="listitem"></article>
-        <button class="contact_button header__button"> Contactez-moi </button>
-      </div>
-      <section class="photograph__portfolio"></section>
-    </main>
-    <div class="globalFilter"></div>
-    <div id="contact_modal">
-      <div class="modal">
-        <header>
-          <h2 class="contact__title">Contactez-moi</h2>
-          <img src="assets/icons/close.svg"  class="cross__close"/>
-        </header>
-        <form>
-          <div>
-            <label for="firstname">Prénom</label>
-            <input 
-              type="text" 
-              name="firstname" 
-              placeholder="Prénom" 
-              minlength="2"
-              maxlength="24"
-              autocomplete="off"
-              required
-            />
-          </div>
 
-          <div>
-            <label for="lastname">Nom</label>
-            <input 
-              type="text" 
-              name="lastname" 
-              placeholder="Nom" 
-              minlength="2"
-              maxlength="24"
-              autocomplete="off"
-              required
-            />
-          </div>
+<head>
+  <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+  <title>Fisheye - photographe</title>
+</head>
 
-          <div>
-            <label for="email">Email</label>
-            <input 
-              type="email" 
-              name="email" 
-              placeholder="Email" 
-              minlength="2"
-              maxlength="24"
-              autocomplete="off"
-              required
-            />
-          </div>
-
-          <div>
-            <label for="message">Votre Message</label>
-            <textarea 
-              name="message" 
-              placeholder="Votre message" 
-              minlength="2"
-              maxlength="500"
-              autocomplete="off"
-              required
-            ></textarea>
-          <button class="contact_button">Envoyer</button>
-        </form>
-      </div>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="assets/images/logo.png" class="logo" />
+    </a>
+  </header>
+  <main id="main">
+    <div class="photograph-header">
+      <article role="listitem"></article>
+      <button class="contact_button header__button"> Contactez-moi </button>
     </div>
-    <!--- Factories  --->
-    <script src="scripts/models/onePhotographer.js" defer></script>
-    <script src="scripts/pages/photographer.js" ></script>
-    <script src="scripts/factories/photographer.js" ></script>
-    <!--- Models  --->
-  </body>
+    <section class="photograph__portfolio"></section>
+  </main>
+  <div class="globalFilter"></div>
+  <div id="contact_modal">
+    <div class="modal">
+      <header>
+        <h2 class="contact__title">Contactez-moi</h2>
+        <img src="assets/icons/close.svg" class="cross__close" />
+      </header>
+      <form>
+        <div>
+          <label for="firstname">Prénom</label>
+          <input type="text" name="firstname" class="text__control" id="firstName" minlength="2" maxlength="24" autocomplete="off" required />
+        </div>
+        <span class="error__firstname error__data">Veuillez entrer 2 caractères minimum pour le champ Prénom</span>
+
+        <div>
+          <label for="lastname">Nom</label>
+          <input type="text" name="lastname" class="text__control" id="lastName" minlength="2" maxlength="24" autocomplete="off" required />
+        </div>
+        <span class="error__lastname error__data">Veuillez entrer 2 caractères minimum pour le champ Nom</span>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" class="text__control" id="email" minlength="2" maxlength="24" autocomplete="off" required />
+        </div>
+        <span class="error__mail error__data">Veuillez entrer un mail valide</span>
+
+        <div>
+          <label for="message">Votre Message</label>
+          <textarea name="message" minlength="2" class="text__control" id="message" maxlength="500" autocomplete="off" required></textarea>
+          <button type="submit" class="contact_button">Envoyer</button>
+          <span class="error__message error__data">Votre texte n'est pas valide</span>
+      </form>
+    </div>
+  </div>
+  <!--- Factories  --->
+  <script src="scripts/models/onePhotographer.js" defer></script>
+  <script src="scripts/pages/photographer.js"></script>
+  <script src="scripts/factories/photographer.js"></script>
+  <!--- Models  --->
+</body>
+
 </html>
