@@ -35,8 +35,11 @@ class onePhotographer{
       firstdiv.appendChild(h1);
       firstdiv.appendChild(locationPhotographer);
       firstdiv.appendChild(taglinePhotographer);
+      firstdiv.setAttribute('tabindex', '0')
       seconddiv.appendChild(buttonContart);
+      seconddiv.setAttribute('tabindex', '0')
       thirddiv.appendChild(img);
+      thirddiv.setAttribute('tabindex', '0')
 
       article.appendChild(firstdiv);
       article.appendChild(seconddiv);
