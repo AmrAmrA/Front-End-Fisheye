@@ -10,18 +10,36 @@ const form                  = document.querySelector("form");
 const errorMessages         = document.querySelectorAll(".error__data");
 const controlText           = document.querySelectorAll(".text__control");
 const allInputs             = document.querySelectorAll("input");
+const body                  = document.querySelector("body");
 
 
 // Open the modal and the filter
 headerButton.addEventListener("click", function () {
+  contact_modal.setAttribute('aria-hidden', 'false'); 
+  body.setAttribute('aria-hidden', 'true');
   contact_modal.style.display = "block";
   globalFilter.classList.toggle("toggleVisibility");
+  crossClose.focus();
+  body.classList.add("no__scroll");
 });
 // Close the modal and hide the filter
 crossClose.addEventListener("click", function () {
+  contact_modal.setAttribute('aria-hidden', 'true'); 
+  body.setAttribute('aria-hidden', 'false');
   contact_modal.style.display = "none";
   globalFilter.classList.toggle("toggleVisibility");
+  headerButton.focus();
+  body.classList.remove("no__scroll");
 });
+
+// close the modal with the escape key
+body.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    contact_modal.style.display = "none";
+    globalFilter.classList.remove("toggleVisibility");
+  }
+});
+
 
 
 // Launch events on inputs to verify if they are valid
@@ -144,3 +162,4 @@ function handleFormSubmit(event) {
     globalFilter.classList.toggle("toggleVisibility");
   }
 }
+

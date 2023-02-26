@@ -9,7 +9,7 @@
   <title>Fisheye - photographe</title>
 </head>
 
-<body>
+<body aria-hidden="false">
   <header>
     <a href="index.html">
       <img src="assets/images/logo.png" class="logo" />
@@ -23,38 +23,41 @@
     <section class="photograph__portfolio"></section>
   </main>
   <div class="globalFilter"></div>
-  <div id="contact_modal">
+  <div id="contact_modal" role="dialog" aria-hidden="true" >
     <div class="modal">
       <header>
-        <h2 class="contact__title">Contactez-moi</h2>
-        <img src="assets/icons/close.svg" class="cross__close" />
+        <h2 class="contact__title" role="heading">Contactez-moi </h2>
+        <img src="assets/icons/close.svg" alt="close Contact Form" class="cross__close" />
       </header>
       <form>
         <div>
           <label for="firstname">Prénom</label>
-          <input type="text" name="firstname" class="text__control" id="firstName" minlength="2" maxlength="24" autocomplete="off"  />
+          <input type="text" name="Firstname" class="text__control" id="firstName" minlength="2" maxlength="24" autocomplete="off" role="text
+          "  aria-label="Entrez votre prénom" aria-required="true"/>
         </div>
         <span class="error__firstname error__data">Veuillez entrer 2 caractères minimum pour le champ Prénom</span>
 
         <div>
           <label for="lastname">Nom</label>
-          <input type="text" name="lastname" class="text__control" id="lastName" minlength="2" maxlength="24" autocomplete="off"  />
+          <input type="text" name=Lastname" class="text__control" id="lastName" minlength="2" maxlength="24" autocomplete="off" 
+          aria-label="Entrez votre nom" aria-required="true" />
         </div>
         <span class="error__lastname error__data">Veuillez entrer 2 caractères minimum pour le champ Nom</span>
 
         <div>
           <label for="email">Email</label>
-          <input type="email" name="email" class="text__control" id="email" minlength="2" maxlength="24" autocomplete="off"  />
+          <input type="email" name="Email" class="text__control" id="email" minlength="2" maxlength="24" autocomplete="off" 
+          aria-label="Entrez votre Mail" aria-required="true" />
         </div>
         <span class="error__mail error__data">Veuillez entrer un mail valide</span>
 
         <div>
           <label for="message">Votre Message</label>
           <div class="userMessage">
-            <textarea name="message" minlength="2" class="text__control" id="message" maxlength="500" autocomplete="off" ></textarea>
+            <textarea name="message" minlength="2" class="text__control" id="message" maxlength="500" autocomplete="off" name="Your Message" aria-required="true"  role="textbox" aria-multiline="true"></textarea>
             <span class="error__message error__data">Votre texte n'est pas valide</span>
           </div>
-          <button type="submit" class="contact_button">Envoyer</button>
+          <button type="submit" name="Send" class="contact_button">Envoyer</button>
       </form>
     </div>
   </div>

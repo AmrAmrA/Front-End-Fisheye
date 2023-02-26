@@ -49,7 +49,7 @@ article p.location {
 /* Old Import  */
 
 #contact_modal {
-  top: 25px;
+  top: 15px;
   position: absolute;
   left: 50%;
   right: 50%;
@@ -113,7 +113,7 @@ article p.location {
 .modal header {
   display: flex;
   width: 100%;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
   align-items: center;
 }
 
@@ -141,9 +141,9 @@ form {
 
 form label {
   color: #312e2e;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 400;
-  margin-bottom: 5px;
+  margin-bottom: 1px;
 }
 
 form div {
@@ -161,18 +161,22 @@ form div {
 form input,
 textarea {
   width: 100%;
-  height: 57px;
+  height: 50px;
   border: none;
   border-radius: 5px;
   margin: 0px 0px 5px 0px;
-  font-size: 25px;
+  font-size: 20px;
   outline: none;
 }
 textarea {
-  height: 200px;
+  height: 170px;
   resize: none;
 }
 .userMessage {
   margin-bottom: 25px;
   
+}
+
+.no__scroll {
+  overflow: hidden;
 }
