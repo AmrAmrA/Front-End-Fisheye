@@ -40,3 +40,45 @@ function displayMedia () {
 }
 displayMedia();
 
+
+const sliderBlock = document.querySelector(".slider__block");
+const centralImage = document.querySelector(".central__image");
+function constructSlider() {
+  const allMedia = document.querySelectorAll(".artist__media");
+  console.log(allMedia);
+  const rightArrow = document.querySelector(".right__direction");
+  console.log(rightArrow);
+
+  
+  for  (let oneMedia of allMedia) {
+    oneMedia.addEventListener("click", (e) => {
+      globalFilter.classList.toggle("toggleVisibility");
+      sliderBlock.style.display = "block";
+      centralImage.src = e.target.src;
+      
+      
+      
+      
+      
+    }
+    
+    
+    
+    )
+    
+    const mediaArray = Array.from(allMedia);
+    rightArrow.addEventListener("click", () => {
+      const currentMediaIndex = mediaArray.indexOf(oneMedia);
+      if (currentMediaIndex < mediaArray.length - 1) {
+        console.log(currentMediaIndex + 1);
+        console.log(currentMediaIndex);
+        console.log(mediaArray.indexOf(oneMedia));
+        console.log(mediaArray.length - 1);
+        centralImage.src = mediaArray[currentMediaIndex +1].src;
+      } else {
+        centralImage.src = mediaArray[0].src;
+      }
+    });
+  }
+}
+setTimeout(constructSlider, 1000);

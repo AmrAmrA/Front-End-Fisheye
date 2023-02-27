@@ -59,6 +59,7 @@
 		{
 			"id": 342550,
 			"photographerId": 82,
+			"artist": "Tracy",
 			"title": "Fashion Yellow Beach",
 			"image": "Fashion_Yellow_Beach.jpg",
 			"likes": 62,
@@ -68,6 +69,7 @@
 		{
 			"id": 8520927,
 			"photographerId": 82,
+			"artist": "Tracy",
 			"title": "Fashion Urban Jungle",
 			"image": "Fashion_Urban_Jungle.jpg",
 			"likes": 11,
@@ -77,6 +79,7 @@
 		{
 			"id": 9025895,
 			"photographerId": 82,
+			"artist": "Tracy",
 			"title": "Fashion Pattern on a Pattern",
 			"image": "Fashion_Pattern_on_Pattern.jpg",
 			"likes": 72,
@@ -86,8 +89,9 @@
 		{
 			"id": 9275938,
 			"photographerId": 82,
+			"artist": "Tracy",
 			"title": "Wedding Gazebo",
-			"image": "Event_WeddingGazebo.jpg",
+			"image": "Event_Wedding_Gazebo.jpg",
 			"likes": 69,
 			"date": "2018-02-22",
 			"price": 55
@@ -95,6 +99,7 @@
 		{
 			"id": 2053494,
 			"photographerId": 82,
+			"artist": "Tracy",
 			"title": "Sparkles",
 			"image": "Event_Sparklers.jpg",
 			"likes": 2,
@@ -104,8 +109,9 @@
 		{
 			"id": 7324238,
 			"photographerId": 82,
+			"artist": "Tracy",
 			"title": "18th Anniversary",
-			"image": "Event_18thAnniversary.jpg",
+			"image": "Event_18th_Anniversary.jpg",
 			"likes": 33,
 			"date": "2019-06-12",
 			"price": 55
@@ -113,6 +119,7 @@
 		{
 			"id": 8328953,
 			"photographerId": 82,
+			"artist": "Tracy",
 			"title": "Wooden sculpture of a horse",
 			"video": "Art_Wooden_Horse_Sculpture.mp4",
 			"likes": 24,
@@ -122,6 +129,7 @@
 		{
 			"id": 7502053,
 			"photographerId": 82,
+			"artist": "Tracy",
 			"title": "Triangle Man",
 			"image": "Art_Triangle_Man.jpg",
 			"likes": 88,
@@ -131,6 +139,7 @@
 		{
 			"id": 8523492,
 			"photographerId": 82,
+			"artist": "Tracy",
 			"title": "Purple Tunnel",
 			"image": "Art_Purple_light.jpg",
 			"likes": 24,
@@ -140,6 +149,7 @@
 		{
 			"id": 75902334,
 			"photographerId": 82,
+			"artist": "Tracy",
 			"title": "Art Mine",
 			"image": "Art_Mine.jpg",
 			"likes": 75,
@@ -150,6 +160,7 @@
 		{
 			"id": 73852953,
 			"photographerId": 925,
+			"artist": "Rhode",
 			"title": "8 Rows",
 			"image": "Sport_2000_with_8.jpg",
 			"likes": 52,
@@ -159,6 +170,7 @@
 		{
 			"id": 92758372,
 			"photographerId": 925,
+			"artist": "Rhode",
 			"title": "Fashion Wings",
 			"image": "Fashion_Wings.jpg",
 			"likes": 58,
@@ -168,6 +180,7 @@
 		{
 			"id": 32958383,
 			"photographerId": 925,
+			"artist": "Rhode",
 			"title": "Melody Red on Stripes",
 			"image": "Fashion_Melody_Red_on_Stripes.jpg",
 			"likes": 11,
@@ -177,8 +190,9 @@
 		{
 			"id": 928587383,
 			"photographerId": 925,
+			"artist": "Rhode",
 			"title": "Venture Conference",
-			"image": "Event_VentureConference.jpg",
+			"image": "Event_Venture_Conference.jpg",
 			"likes": 2,
 			"date": "2019-01-02",
 			"price": 70
@@ -186,8 +200,9 @@
 		{
 			"id": 725639493,
 			"photographerId": 925,
+			"artist": "Rhode",
 			"title": "Product Pitch",
-			"image": "Event_ProductPitch.jpg",
+			"image": "Event_Product_Pitch.jpg",
 			"likes": 3,
 			"date": "2019-05-20",
 			"price": 70
@@ -195,8 +210,9 @@
 		{
 			"id": 23394384,
 			"photographerId": 925,
+			"artist": "Rhode",
 			"title": "Musical Festival Keyboard",
-			"image": "Event_KeyboardCheck.jpg",
+			"image": "Event_Keyboard_Check.jpg",
 			"likes": 52,
 			"date": "2019-07-18",
 			"price": 70
@@ -204,6 +220,7 @@
 		{
 			"id": 87367293,
 			"photographerId": 925,
+			"artist": "Rhode",
 			"title": "Musical Festival Singer",
 			"image": "Event_Emcee.jpg",
 			"likes": 23,
@@ -213,6 +230,7 @@
 		{
 			"id": 593834784,
 			"photographerId": 925,
+			"artist": "Rhode",
 			"title": "Animal Majesty",
 			"image": "Animals_Majesty.jpg",
 			"likes": 52,
@@ -222,6 +240,7 @@
 		{
 			"id": 83958935,
 			"photographerId": 925,
+			"artist": "Rhode",
 			"title": "Cute puppy on sunset",
 			"video": "Animals_Puppiness.mp4",
 			"likes": 52,
@@ -231,6 +250,7 @@
 		{
 			"id": 394583434,
 			"photographerId": 527,
+			"artist": "Nabeel",
 			"title": "Rocky mountains from the air",
 			"video": "Travel_Rock_Mountains.mp4",
 			"likes": 23,
@@ -240,6 +260,7 @@
 		{
 			"id": 343423425,
 			"photographerId": 527,
+			"artist": "Nabeel",
 			"title": "Outdoor Baths",
 			"image": "Travel_Outdoor_Baths.jpg",
 			"likes": 101,
@@ -249,6 +270,7 @@
 		{
 			"id": 73434243,
 			"photographerId": 527,
+			"artist": "Nabeel",
 			"title": "Road into the Hill",
 			"image": "Travel_Road_into_Hill.jpg",
 			"likes": 99,
@@ -258,6 +280,7 @@
 		{
 			"id": 23425523,
 			"photographerId": 527,
+			"artist": "Nabeel",
 			"title": "Bridge into the Forest",
 			"image": "Travel_Bridge_into_Forest.jpg",
 			"likes": 34,
@@ -267,6 +290,7 @@
 		{
 			"id": 23134513,
 			"photographerId": 527,
+			"artist": "Nabeel",
 			"title": "Boat Wonderer",
 			"image": "Travel_Boat_Wanderer.jpg",
 			"likes": 23,
@@ -276,6 +300,7 @@
 		{
 			"id": 92352352,
 			"photographerId": 527,
+			"artist": "Nabeel",
 			"title": "Portrait Sunkiss",
 			"image": "Portrait_Sunkissed.jpg",
 			"likes": 66,
@@ -285,6 +310,7 @@
 		{
 			"id": 34513453,
 			"photographerId": 527,
+			"artist": "Nabeel",
 			"title": "Shaw Potrait",
 			"image": "Portrait_Shaw.jpg",
 			"likes": 52,
@@ -294,6 +320,7 @@
 		{
 			"id": 23523533,
 			"photographerId": 527,
+			"artist": "Nabeel",
 			"title": "Alexandra",
 			"image": "Portrait_Alexandra.jpg",
 			"likes": 95,
@@ -303,6 +330,7 @@
 		{
 			"id": 525834234,
 			"photographerId": 527,
+			"artist": "Nabeel",
 			"title": "Afternoon Break",
 			"image": "Portrait_AfternoonBreak.jpg",
 			"likes": 25,
@@ -313,6 +341,7 @@
 		{
 			"id": 623534343,
 			"photographerId": 243,
+			"artist": "Mimi",
 			"title": "Lonesome",
 			"image": "Travel_Lonesome.jpg",
 			"likes": 88,
@@ -322,8 +351,9 @@
 		{
 			"id": 625025343,
 			"photographerId": 243,
+			"artist": "Mimi",
 			"title": "Hillside Color",
-			"image": "Travel_HillsideColor.jpg",
+			"image": "Travel_Hillside_Color.jpg",
 			"likes": 85,
 			"date": "2019-04-03",
 			"price": 45
@@ -331,6 +361,7 @@
 		{
 			"id": 2525345343,
 			"photographerId": 243,
+			"artist": "Mimi",
 			"title": "Wednesday Potrait",
 			"image": "Portrait_Wednesday.jpg",
 			"likes": 34,
@@ -340,6 +371,7 @@
 		{
 			"id": 2523434634,
 			"photographerId": 243,
+			"artist": "Mimi",
 			"title": "Nora Portrait",
 			"image": "Portrait_Nora.jpg",
 			"likes": 63,
@@ -349,6 +381,7 @@
 		{
 			"id": 398847109,
 			"photographerId": 243,
+			"artist": "Mimi",
 			"title": "Raw Black Portrait",
 			"image": "Portrait_Background.jpg",
 			"likes": 55,
@@ -358,8 +391,9 @@
 		{
 			"id": 2534342,
 			"photographerId": 243,
+			"artist": "Mimi",
 			"title": "Seaside Wedding",
-			"image": "Event_SeasideWedding.jpg",
+			"image": "Event_Seaside_Wedding.jpg",
 			"likes": 25,
 			"date": "2019-06-21",
 			"price": 45
@@ -367,8 +401,9 @@
 		{
 			"id": 65235234,
 			"photographerId": 243,
+			"artist": "Mimi",
 			"title": "Boulder Wedding",
-			"image": "Event_PintoWedding.jpg",
+			"image": "Event_Pinto_Wedding.jpg",
 			"likes": 52,
 			"date": "2019-06-25",
 			"price": 45
@@ -376,8 +411,9 @@
 		{
 			"id": 23523434,
 			"photographerId": 243,
+			"artist": "Mimi",
 			"title": "Benevides Wedding",
-			"image": "Event_BenevidesWedding.jpg",
+			"image": "Event_Benevides_Wedding.jpg",
 			"likes": 77,
 			"date": "2019-06-28",
 			"price": 45
@@ -385,6 +421,7 @@
 		{
 			"id": 5234343,
 			"photographerId": 243,
+			"artist": "Mimi",
 			"title": "Wild horses in the mountains",
 			"video": "Animals_Wild_Horses_in_the_mountains.mp4",
 			"likes": 142,
@@ -394,6 +431,7 @@
 		{
 			"id": 95234343,
 			"photographerId": 243,
+			"artist": "Mimi",
 			"title": "Rainbow Bird",
 			"image": "Animals_Rainbow.jpg",
 			"likes": 59,
@@ -404,6 +442,7 @@
 		{
 			"id": 52343416,
 			"photographerId": 195,
+			"artist": "Marcel",
 			"title": "Japanese Tower, Kyoto",
 			"image": "Travel_Tower.jpg",
 			"likes": 25,
@@ -413,8 +452,9 @@
 		{
 			"id": 2523434,
 			"photographerId": 195,
+			"artist": "Marcel",
 			"title": "Senset on Canals, Venice",
-			"image": "Travel_SunsetonCanals.jpg",
+			"image": "Travel_Sunset_On_Canals.jpg",
 			"likes": 53,
 			"date": "2019-05-06",
 			"price": 60
@@ -422,8 +462,9 @@
 		{
 			"id": 95293534,
 			"photographerId": 195,
+			"artist": "Marcel",
 			"title": "Mountain and Lake",
-			"image": "Travel_OpenMountain.jpg",
+			"image": "Travel_Open_Mountain.jpg",
 			"likes": 33,
 			"date": "2019-05-12",
 			"price": 60
@@ -431,6 +472,7 @@
 		{
 			"id": 356234343,
 			"photographerId": 195,
+			"artist": "Marcel",
 			"title": "City Bike and Stair, Paris",
 			"image": "Travel_Bike_and_Stair.jpg",
 			"likes": 53,
@@ -440,6 +482,7 @@
 		{
 			"id": 235234343,
 			"photographerId": 195,
+			"artist": "Marcel",
 			"title": "Adventure Door, India",
 			"image": "Travel_Adventure_Door.jpg",
 			"likes": 63,
@@ -449,6 +492,7 @@
 		{
 			"id": 6234234343,
 			"photographerId": 195,
+			"artist": "Marcel",
 			"title": "Contrast, St Petersburg",
 			"image": "Architecture_Contrast.jpg",
 			"likes": 52,
@@ -458,6 +502,7 @@
 		{
 			"id": 6525666253,
 			"photographerId": 195,
+			"artist": "Marcel",
 			"title": "On a Hill, Tibet",
 			"image": "Architecture_On_a_hill.jpg",
 			"likes": 63,
@@ -467,6 +512,7 @@
 		{
 			"id": 98252523433,
 			"photographerId": 195,
+			"artist": "Marcel",
 			"title": "Leaning Tower, Pisa",
 			"image": "Architecture_Dome.jpg",
 			"likes": 88,
@@ -476,8 +522,9 @@
 		{
 			"id": 9259398453,
 			"photographerId": 195,
+			"artist": "Marcel",
 			"title": "Drone shot of Buenos Aires highways",
-			"video": "Architecture_coverr_circle_empty_highway_in_buenos_aires_587740985637.mp4",
+			"video": "Architecture_empty_highway_in_buenos_aires.mp4",
 			"likes": 57,
 			"date": "2020-01-20",
 			"price": 65
@@ -485,6 +532,7 @@
 		{
 			"id": 3523523534,
 			"photographerId": 195,
+			"artist": "Marcel",
 			"title": "Corner Building and Blue Sky",
 			"image": "Architecture_Corner_Room.jpg",
 			"likes": 54,
@@ -494,6 +542,7 @@
 		{
 			"id": 952343423,
 			"photographerId": 930,
+			"artist": "Ellie Rose",
 			"title": "Tricks in te air",
 			"video": "Sport_Tricks_in_the_air.mp4",
 			"likes": 150,
@@ -503,6 +552,7 @@
 		{
 			"id": 235234343,
 			"photographerId": 930,
+			"artist": "Ellie Rose",
 			"title": "Climber",
 			"image": "Sport_Next_Hold.jpg",
 			"likes": 101,
@@ -512,6 +562,7 @@
 		{
 			"id": 235343222,
 			"photographerId": 930,
+			"artist": "Ellie Rose",
 			"title": "Surfer",
 			"image": "sport_water_tunnel.jpg",
 			"likes": 103,
@@ -521,6 +572,7 @@
 		{
 			"id": 7775342343,
 			"photographerId": 930,
+			"artist": "Ellie Rose",
 			"title": "Skier",
 			"image": "Sport_Sky_Cross.jpg",
 			"likes": 77,
@@ -530,6 +582,7 @@
 		{
 			"id": 9253445784,
 			"photographerId": 930,
+			"artist": "Ellie Rose",
 			"title": "Race End",
 			"image": "Sport_Race_End.jpg",
 			"likes": 88,
@@ -539,6 +592,7 @@
 		{
 			"id": 22299394,
 			"photographerId": 930,
+			"artist": "Ellie Rose",
 			"title": "Jump!",
 			"image": "Sport_Jump.jpg",
 			"likes": 95,
@@ -548,6 +602,7 @@
 		{
 			"id": 3452342633,
 			"photographerId": 930,
+			"artist": "Ellie Rose",
 			"title": "White Light",
 			"image": "Architecture_White_Light.jpg",
 			"likes": 52,
@@ -557,6 +612,7 @@
 		{
 			"id": 939234243,
 			"photographerId": 930,
+			"artist": "Ellie Rose",
 			"title": "Water on Modern Building",
 			"image": "Architecture_Water_on_Modern.jpg",
 			"likes": 55,
@@ -566,6 +622,7 @@
 		{
 			"id": 222959233,
 			"photographerId": 930,
+			"artist": "Ellie Rose",
 			"title": "Horseshoe",
 			"image": "Architecture_Horseshoe.jpg",
 			"likes": 85,
@@ -575,6 +632,7 @@
 		{
 			"id": 965933434,
 			"photographerId": 930,
+			"artist": "Ellie Rose",
 			"title": "Cross Bar",
 			"image": "Architecture_Cross_Bar.jpg",
 			"likes": 66,
@@ -584,6 +642,7 @@
 		{
 			"id": 777723343,
 			"photographerId": 930,
+			"artist": "Ellie Rose",
 			"title": "Connected Curves",
 			"image": "Architecture_Connected_Curves.jpg",
 			"likes": 79,

@@ -6,6 +6,7 @@
   <meta charset="utf-8" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2ksktFvDB/ykZ0mDpsZj20w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>Fisheye - photographe</title>
 </head>
 
@@ -21,6 +22,10 @@
       <button class="contact_button header__button"> Contactez-moi </button>
     </div>
     <section class="photograph__medias"></section>
+    <article class="slider__block">
+      <img src="" alt="" class="central__image">
+      <i class="fas fa-chevron-right right__direction" style="width: 50px; height: 50px;"></i>
+    </article>
   </main>
   <div class="globalFilter"></div>
   <div id="contact_modal" role="dialog" aria-hidden="true" >
@@ -39,7 +44,7 @@
 
         <div>
           <label for="lastname">Nom</label>
-          <input type="text" name=Lastname" class="text__control" id="lastName" minlength="2" maxlength="24" autocomplete="off" 
+          <input type="text" name="Lastname" class="text__control" id="lastName" minlength="2" maxlength="24" autocomplete="off" 
           aria-label="Entrez votre nom" aria-required="true" />
         </div>
         <span class="error__lastname error__data">Veuillez entrer 2 caractères minimum pour le champ Nom</span>
