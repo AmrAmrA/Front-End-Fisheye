@@ -47,3 +47,5 @@ class onePhotographer{
       return article;
     }
   }
+
+ 

@@ -9,7 +9,7 @@ html,
   box-sizing: border-box;
 }
 
-header {
+.page__header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -22,7 +22,7 @@ header {
   margin-left: 100px;
 }
 
-article {
+.photograph-header article {
   height: 300px;
   display: flex;
   justify-content: space-between;
@@ -99,6 +99,7 @@ article p.location {
   z-index: 10;
   visibility: hidden;
 }
+
 .toggleVisibility {
   visibility: visible;
 }
@@ -152,6 +153,7 @@ form div {
   width: 100%;
   align-items: self-start;
 }
+
 .error__data {
   color: #000000;
   font-size: 17px;
@@ -168,15 +170,47 @@ textarea {
   font-size: 20px;
   outline: none;
 }
+
 textarea {
   height: 170px;
   resize: none;
 }
+
 .userMessage {
   margin-bottom: 25px;
-  
+
 }
 
 .no__scroll {
   overflow: hidden;
+}
+
+.photograph__medias {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 25px 100px;
+  justify-content: space-around;
+}
+
+.photograph__medias article {
+  margin-bottom: 25px;
+}
+
+.photograph__medias article video,
+.photograph__medias article img {
+  height: 200px;
+  width: 350px;
+  border-radius: 5px;
+}
+
+.photograph__medias article  header p {
+  color: #901c1c;
+  font-size: 21px;
+}
+.photograph__medias article  header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0px;
 }

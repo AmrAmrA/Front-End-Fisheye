@@ -1,5 +1,4 @@
 const PhotographerId          = new URLSearchParams(window.location.search).get("id");
-
 function displayData() {
   fetch("data/photographers.json")
     .then((response) => response.json())
@@ -40,3 +39,4 @@ function displayMedia () {
     });
 }
 displayMedia();
+
