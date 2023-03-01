@@ -23,24 +23,14 @@ headerButton.addEventListener("click", function () {
   body.classList.add("no__scroll");
 });
 // Close the modal and hide the filter
-crossClose.addEventListener("click", function () {
-  contact_modal.setAttribute('aria-hidden', 'true'); 
-  body.setAttribute('aria-hidden', 'false');
-  contact_modal.style.display = "none";
-  globalFilter.classList.toggle("toggleVisibility");
-  headerButton.focus();
-  body.classList.remove("no__scroll");
-});
+crossClose.addEventListener("click", closeModaleForm);
 
 // close the modal with the escape key
 body.addEventListener("keydown", function (e) {
   if (e.key === "Escape") {
-    contact_modal.style.display = "none";
-    globalFilter.classList.remove("toggleVisibility");
+    closeModaleForm();
   }
 });
-
-
 
 // Launch events on inputs to verify if they are valid
 firstnameInput.addEventListener("blur", firstNameValidation);
@@ -78,25 +68,27 @@ function showValidation({ index, validation }) {
   }
 }
 // Regex for the first name and last name
-const regexfirstName = /^[a-zA-Z-àâäéèêëïîôöùûüç ,.'-]+$/;
+const regexfirstAndLastName = /^[a-zA-Z-àâäéèêëïîôöùûüç ,.'-]+$/;
 // Function to check if firstName is valid
 function firstNameValidation() {
   if (
     firstnameInput.value.length < 2 ||
-    !regexfirstName.test(firstnameInput.value)
+    !regexfirstAndLastName.test(firstnameInput.value)
   ) {
     showValidation({ index: 0, validation: false });
     inputsValidities.firstName = false;
-  } else {
-    showValidation({ index: 0, validation: true });
-    inputsValidities.firstName = true;
+    return;
   }
+
+  showValidation({ index: 0, validation: true });
+  inputsValidities.firstName = true;
+
 }
 // Function to check if lastName is valid
 function lastNameValidation() {
   if (
     lastNameInput.value.length < 2 ||
-    !regexfirstName.test(lastNameInput.value)
+    !regexfirstAndLastName.test(lastNameInput.value)
   ) {
     showValidation({ index: 1, validation: false });
     inputsValidities.lastName = false;
@@ -158,8 +150,32 @@ function handleFormSubmit(event) {
     controlText.forEach((input) => {
       input.style.border = "none";
     });
-    contact_modal.style.display = "none";
-    globalFilter.classList.toggle("toggleVisibility");
+    closeModaleForm();
   }
 }
 
+/**
+ * When the user clicks the close button, the modal is hidden, the body is no longer hidden, the global
+ * filter is toggled, the focus is set to the header button, and the body is no longer scrollable.
+ */
+function closeModaleForm(){
+  contact_modal.setAttribute('aria-hidden', 'true'); 
+  body.setAttribute('aria-hidden', 'false');
+  contact_modal.style.display = "none";
+  globalFilter.classList.toggle("toggleVisibility");
+  headerButton.focus();
+  body.classList.remove("no__scroll");
+}
+
+displayDataAndMedia().then((data) => {
+  {
+    for (const photographPage of data.photographers) {
+      if (photographPage.id == PhotographerId) {
+        const { name } = photographPage;
+        const contactTitle = document.querySelector(".contact__title");
+          contactTitle.innerHTML = `
+          <h2 class="contact__title">Contactez-moi <br> ${name}</h2>`
+          contact_modal.setAttribute('name', `Contactez-moi ${name}`);
+      }
+    }
+  }});
