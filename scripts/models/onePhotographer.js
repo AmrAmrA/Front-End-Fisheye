@@ -48,4 +48,4 @@ class onePhotographer{
     }
   }
 
- 
+console.log('salut'); 

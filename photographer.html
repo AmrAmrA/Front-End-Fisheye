@@ -11,7 +11,7 @@
 </head>
 
 <body aria-hidden="false">
-  <header class="page__header">
+  <header class="page__header" tabindex="0">
     <a href="index.html">
       <img src="assets/images/logo.png" class="logo" />
     </a>
@@ -24,43 +24,44 @@
     <section class="photograph__medias"></section>
     <article class="slider__block">
       <img src="" alt="" class="central__image">
-      <i class="fas fa-chevron-right right__direction" style="width: 50px; height: 50px;"></i>
+      <i class="fas fa-chevron-right  right__direction" style="width: 50px; height: 50px;"></i>
+      <i class="fas fa-chevron-left   left__direction" style="width: 50px; height: 50px;"></i>
     </article>
   </main>
   <div class="globalFilter"></div>
   <div id="contact_modal" role="dialog" aria-hidden="true" >
     <div class="modal">
-      <header>
-        <h2 class="contact__title" role="heading">Contactez-moi </h2>
-        <img src="assets/icons/close.svg" alt="close Contact Form" class="cross__close" />
+      <header tabindex="0">
+        <h2 class="contact__title" role="heading" tabindex="0">Contactez-moi </h2>
+        <img src="assets/icons/close.svg" alt="close Contact Form" class="cross__close"  tabindex="0"/>
       </header>
       <form>
         <div>
-          <label for="firstname">Prénom</label>
+          <label for="firstname" tabindex="0">Prénom</label>
           <input type="text" name="Firstname" class="text__control" id="firstName" minlength="2" maxlength="24" autocomplete="off" role="text
-          "  aria-label="Entrez votre prénom" aria-required="true"/>
+          "  aria-label="Entrez votre prénom" aria-required="true" tabindex="0"/>
         </div>
-        <span class="error__firstname error__data">Veuillez entrer 2 caractères minimum pour le champ Prénom</span>
+        <span class="error__firstname error__data" tabindex="0">Veuillez entrer 2 caractères minimum pour le champ Prénom</span>
 
         <div>
-          <label for="lastname">Nom</label>
+          <label for="lastname" tabindex="0">Nom</label>
           <input type="text" name="Lastname" class="text__control" id="lastName" minlength="2" maxlength="24" autocomplete="off" 
-          aria-label="Entrez votre nom" aria-required="true" />
+          aria-label="Entrez votre nom" aria-required="true" tabindex="0" />
         </div>
-        <span class="error__lastname error__data">Veuillez entrer 2 caractères minimum pour le champ Nom</span>
+        <span class="error__lastname error__data" tabindex="0">Veuillez entrer 2 caractères minimum pour le champ Nom</span>
 
         <div>
-          <label for="email">Email</label>
+          <label for="email" tabindex="0">Email</label>
           <input type="email" name="Email" class="text__control" id="email" minlength="2" maxlength="24" autocomplete="off" 
-          aria-label="Entrez votre Mail" aria-required="true" />
+          aria-label="Entrez votre Mail" aria-required="true" tabindex="0"/>
         </div>
-        <span class="error__mail error__data">Veuillez entrer un mail valide</span>
+        <span class="error__mail error__data" tabindex="0">Veuillez entrer un mail valide</span>
 
         <div>
-          <label for="message">Votre Message</label>
+          <label for="message" tabindex="0">Votre Message</label>
           <div class="userMessage">
-            <textarea name="message" minlength="2" class="text__control" id="message" maxlength="500" autocomplete="off" name="Your Message" aria-required="true"  role="textbox" aria-multiline="true"></textarea>
-            <span class="error__message error__data">Votre texte n'est pas valide</span>
+            <textarea name="message" minlength="2" class="text__control" id="message" maxlength="500" autocomplete="off" name="Your Message" aria-required="true"  role="textbox" aria-multiline="true" tabindex="0"></textarea>
+            <span class="error__message error__data" tabindex="0" >Votre texte n'est pas valide</span>
           </div>
           <button type="submit" name="Send" class="contact_button">Envoyer</button>
       </form>
