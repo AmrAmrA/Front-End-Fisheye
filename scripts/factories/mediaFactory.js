@@ -18,11 +18,9 @@ class mediaFactory {
         const img = document.createElement( 'img' );
         const video = document.createElement( 'video' );
         if (this._picture.includes("mp4")){
-            video.setAttribute("width", "350");
-            video.setAttribute("height", "200");
-            video.setAttribute("controls", "controls");
-            video.innerHTML = `<source src="${this._picture}" type="video/mp4">`
-            video.classList.add("artist__media");
+            let changeMimeType = this._picture.replace("mp4", "png");
+            img.setAttribute("src", changeMimeType)
+            img.classList.add("artist__media");
         } else {
             img.setAttribute("src", this._picture)
             img.setAttribute("alt", `${this._title} by artist`) 
@@ -35,7 +33,7 @@ class mediaFactory {
         // Adding Content
         titleText.textContent = this._title;
         likesText.textContent = this._likes;
-        this._picture.includes("mp4") ? article.appendChild(video) : article.appendChild(img);
+        this._picture.includes("mp4") ? article.appendChild(img) : article.appendChild(img);
         mediaHeader.appendChild(titleText);
         mediaHeader.appendChild(likesText);
         article.appendChild(mediaHeader);

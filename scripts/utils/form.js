@@ -199,17 +199,17 @@ function closeModaleForm() {
   contact_modal.setAttribute("aria-hidden", "true");
   body.setAttribute("aria-hidden", "false");
   contact_modal.style.display = "none";
-  globalFilter.classList.toggle("toggleVisibility");
+  globalFilter.classList.remove("toggleVisibility");
   headerButton.focus();
   giveNegativeIndex();
-
+  
 }
 
 function openModal() {
   contact_modal.setAttribute("aria-hidden", "false");
   body.setAttribute("aria-hidden", "true");
   contact_modal.style.display = "block";
-  globalFilter.classList.toggle("toggleVisibility");
+  globalFilter.classList.add("toggleVisibility");
   crossClose.focus();
   givePositivIndex();
 

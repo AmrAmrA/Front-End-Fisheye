@@ -37,9 +37,28 @@ displayDataAndMedia().then((data) => {
 
 function displaySlider () {
   const allMedia = document.querySelectorAll(".artist__media");
+  const sliderBlock = document.querySelector(".slider__block");
+  const closeSlider   = document.querySelector(".close__slider");
+  closeSlider.addEventListener("click", closeTheSlider);
+
+
+
+  body.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeTheSlider();
+    }
+});
+
+
+
+  function closeTheSlider () {
+    sliderBlock.style.display = "none";
+  }
+
+
+
   for (let oneMedia of allMedia) {
     oneMedia.addEventListener("click", (e) => {
-        const sliderBlock = document.querySelector(".slider__block");
         const centralImage = document.querySelector(".central__image");
         const rightArrow = document.querySelector(".right__direction");
         const leftArrow = document.querySelector(".left__direction");
@@ -47,7 +66,11 @@ function displaySlider () {
         centralImage.src = e.target.src;
         const mediaArray = Array.from(allMedia);
         let mediaIndex = mediaArray.indexOf(e.target);
-        rightArrow.addEventListener("click", () => {
+        rightArrow.addEventListener("click", nextSlide);
+        leftArrow.addEventListener("click", previousSlide);
+        
+        
+        function nextSlide () {
           if (mediaIndex < mediaArray.length - 1) 
           {
             centralImage.src = mediaArray[mediaIndex + 1].src;
@@ -58,9 +81,9 @@ function displaySlider () {
             centralImage.src = mediaArray[0].src;
             mediaIndex = 0;
           }
-        });
+        }
 
-        leftArrow.addEventListener("click", () => {
+        function previousSlide () {
           if (mediaIndex > 0) {
             centralImage.src = mediaArray[mediaIndex - 1].src;
             mediaIndex--;
@@ -68,7 +91,23 @@ function displaySlider () {
             centralImage.src = mediaArray[mediaArray.length - 1].src;
             mediaIndex = mediaArray.length - 1;
           }
-        });
+        }
+
+        function arrowClick (event) {
+            if (event.keyCode == 39) {
+                nextSlide();
+                return; 
+            }
+            else if (event.keyCode == 37) {
+              previousSlide();
+            }
+        }
+        
+       body.addEventListener("keydown", arrowClick);
+        
+
+
+
       }); 
     }};
 
