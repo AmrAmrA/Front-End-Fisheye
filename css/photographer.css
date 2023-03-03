@@ -202,12 +202,13 @@ textarea {
   cursor: pointer;
 }
 
-.photograph__medias article  header p, 
-.photograph__medias article  header h2 {
+.photograph__medias article header p,
+.photograph__medias article header h2 {
   color: #901c1c;
   font-size: 18px;
 }
-.photograph__medias article  header {
+
+.photograph__medias article header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -216,22 +217,24 @@ textarea {
 
 
 .slider__block {
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: rgba(219, 219, 219, 0.7);
-z-index: 10000;
-display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(219, 219, 219, 0.7);
+  z-index: 10000;
+  display: none;
 
 }
+
 .place__image {
-  width : 1000px; 
-  height : 1000px;
+  width: 1000px;
+  height: 1000px;
   display: block;
   margin: 0 auto;
 }
+
 .slider__block .central__image {
   width: 100%;
   height: 75%;
@@ -243,29 +246,31 @@ display: none;
 
 
 .right__direction {
-position: absolute;
-top: 45%;
-right: 10%;
-color: #901C1C;
-cursor: pointer;
+  position: absolute;
+  top: 45%;
+  right: 10%;
+  color: #901C1C;
+  cursor: pointer;
 }
 
 .left__direction {
-position: absolute;
-top: 45%;
-left: 10%;
-color: #901C1C;
-cursor: pointer;
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  color: #901C1C;
+  cursor: pointer;
 }
 
 .close__slider {
   width: 40px;
-height: 40px;
-position: absolute;
-top: 6%;
-color: #901C1C;
-right: 11%;
-cursor: pointer; } 
+  height: 40px;
+  position: absolute;
+  top: 6%;
+  color: #901C1C;
+  right: 11%;
+  cursor: pointer;
+}
+
 i {
-  width:  1140px;
+  width: 1140px;
 }
