@@ -47,5 +47,3 @@ class onePhotographer{
       return article;
     }
   }
-
-console.log('salut'); 

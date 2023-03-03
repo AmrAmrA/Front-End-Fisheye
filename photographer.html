@@ -21,8 +21,26 @@
       <article role="listitem"></article>
       <button class="contact_button header__button"> Contactez-moi </button>
     </div>
+      <div class="wrapper">
+        <label for="photo__sort" class="label__sort"> Trier par </label>
+        <select name="photo__sort" id="photo__sort" >
+            <option value="popularity"> Popularité </option>
+            <option value="date">Date</option>
+            <option value="title">Titre</option>
+        </select>
+        <div class="custom__dropdown">
+          <div class="custom__options">
+            <div class="options firstOption">Popularité</div>
+            <div class="options secondOption">Date</div>
+            <div class="options thirdOption ">Titre</div>
+          </div>
+        </div>
+        <i class="fas fa-chevron-down" style="margin-top: 12px;"></i>
+      </div>
     <section class="photograph__medias"></section>
+    
     <article class="slider__block">
+
        <div class="place__image">
         <img src="" alt="" class="central__image">
        </div>

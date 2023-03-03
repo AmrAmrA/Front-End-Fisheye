@@ -38,12 +38,28 @@ displayDataAndMedia().then((data) => {
   }
 });
 
-function hideThePage() {
+function openTheSlider() {
   sliderBlock.style.display = "block";
   mediaSection.style.display = "none";
   photographersSection.style.display = "none";
   pageHeader.style.display = "none";
 }
+function closeTheSlider() {
+  sliderBlock.style.display = "none";
+  mediaSection.style.display = "flex";
+  photographersSection.style.display = "block";
+  pageHeader.style.display = "flex";
+}
+
+
+
+
+
+
+
+
+
+
 
 function displaySlider() {
   const allMedia = document.querySelectorAll(".artist__media");
@@ -56,12 +72,6 @@ function displaySlider() {
     }
   });
 
-  function closeTheSlider() {
-    sliderBlock.style.display = "none";
-    mediaSection.style.display = "flex";
-    photographersSection.style.display = "block";
-    pageHeader.style.display = "flex";
-  }
 
   for (let oneMedia of allMedia) {
     oneMedia.addEventListener("click", (e) => {
@@ -75,7 +85,7 @@ function displaySlider() {
       rightArrow.addEventListener("click", nextSlide);
       leftArrow.addEventListener("click", previousSlide);
 
-      hideThePage();
+      openTheSlider();
 
       function nextSlide() {
         if (mediaIndex < mediaArray.length - 1) {
@@ -114,3 +124,17 @@ function displaySlider() {
 }
 
 setTimeout(displaySlider, 1000);
+let firstOption = document.querySelector(".firstOption");
+let customOptions = document.querySelector(".custom__options");
+console.log(customOptions);
+customOptions.addEventListener("click", (e) => {
+  customOptions.classList.toggle("full__height");
+  console.log(e.target.offsetTop);
+   firstOption.offsetTop = e.target.offsetTop;
+  // if (e.target.classList.contains("custom__option")) {
+  //   const selected = document.querySelector(".custom__option--selected");
+  //   selected.classList.remove("custom__option--selected");
+  //   e.target.classList.add("custom__option--selected");
+  // }
+} 
+);
