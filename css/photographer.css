@@ -331,3 +331,30 @@ i {
 .firstOption {
   order: 1;
 }
+
+footer { 
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  position: relative;
+}
+.likesFooter {
+  display: flex;
+  justify-content: space-between;
+
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  background-color: #DB8876;
+  width: 200px;
+  height: 50px;
+  padding: 15px;
+  border-radius: 5px 5px 0px 0px ;
+}
+.totalOFlIkes {
+  margin-right: 5px;
+}
+.partOfLikes {
+  display: flex;
+  align-items: center;
+}

@@ -1,15 +1,15 @@
 class mediaFactory {
   constructor(data) {
     const { title, image, video, likes, id, photographerId, artist } = data;
-    this._title = title;
-    this._artist = artist;
-    this._picture = image
+    this._title           = title;
+    this._artist          = artist;
+    this._picture         = image
       ? `medias/${artist}/${image}`
       : `medias/${artist}/${video}`;
-    this._likes = likes;
-    this._id = id;
-    this._photographerId = photographerId;
-    this.video = video;
+    this._likes           = likes;
+    this._id              = id;
+    this._photographerId  = photographerId;
+    this.video            = video;
   }
 
   getuserGalleryCard() {
@@ -26,10 +26,11 @@ class mediaFactory {
       img.setAttribute("alt", `${this._title} by artist`);
       img.classList.add("artist__media");
     }
-    const titleText = document.createElement("h2");
-    const likesText = document.createElement("p");
+    const titleText   = document.createElement("h2");
+    const likesText   = document.createElement("p");
     const mediaHeader = document.createElement("header");
 
+    likesText.classList.add("likesNumber");
     // Adding Content
     titleText.textContent = this._title;
     likesText.textContent = this._likes;
@@ -40,5 +41,9 @@ class mediaFactory {
     mediaHeader.appendChild(likesText);
     article.appendChild(mediaHeader);
     return article;
+  }
+
+  getuserFooterCard() {
+    const footer = document.createElement("footer");
   }
 }

@@ -4,6 +4,8 @@ const mediaSection = document.querySelector(".photograph__medias");
 const photographersSection = document.querySelector(".photograph-header");
 const pageHeader = document.querySelector(".page__header");
 
+let totalOfLikes = document.querySelector(".totalOFlIkes");
+let moneyDay = document.querySelector(".moneyDay");
 async function displayDataAndMedia() {
   const response = await fetch("data/photographers.json");
   if (!response.ok) {
@@ -25,6 +27,8 @@ displayDataAndMedia().then((data) => {
         );
         const userCardDOM = photographeModel.getUserCardDOM();
         photographersSection.appendChild(userCardDOM);
+        console.log(photographPage.price);
+        moneyDay.textContent = `${photographPage.price}€/ jour`;
       }
     }
   }
@@ -35,8 +39,16 @@ displayDataAndMedia().then((data) => {
       const mediaCardDOM = mediaModel.getuserGalleryCard();
       mediaSection.appendChild(mediaCardDOM);
     }
+    let zero = 0;
+    const AllLikes = document.querySelectorAll(".likesNumber");
+    for (let i = 0; i < AllLikes.length; i++) {
+      let total =  zero += parseInt(AllLikes[i].textContent);
+      totalOfLikes.textContent = `${total}`;
+    }
   }
 });
+
+
 
 function openTheSlider() {
   sliderBlock.style.display = "block";
@@ -124,17 +136,3 @@ function displaySlider() {
 }
 
 setTimeout(displaySlider, 1000);
-let firstOption = document.querySelector(".firstOption");
-let customOptions = document.querySelector(".custom__options");
-console.log(customOptions);
-customOptions.addEventListener("click", (e) => {
-  customOptions.classList.toggle("full__height");
-  console.log(e.target.offsetTop);
-   firstOption.offsetTop = e.target.offsetTop;
-  // if (e.target.classList.contains("custom__option")) {
-  //   const selected = document.querySelector(".custom__option--selected");
-  //   selected.classList.remove("custom__option--selected");
-  //   e.target.classList.add("custom__option--selected");
-  // }
-} 
-);

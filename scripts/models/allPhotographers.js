@@ -35,6 +35,7 @@ class allPhotographers {
     article.appendChild(locationPhotographer);
     article.appendChild(taglinePhotographer);
     article.appendChild(pricePhotographer);
+    console.log(this.price);
     return article;
   }
 }
