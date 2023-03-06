@@ -13,37 +13,24 @@ class mediaFactory {
   }
 
   getuserGalleryCard() {
+    
+    console.log(this._picture); 
+    if(this._picture.includes('mp4')){
+      this._picture = this._picture.replace("mp4", "png");
+    }
+    this._picture.includes("mp4") ? this._picture.replace("mp4", "png") : '';
     const article = document.createElement("article");
     article.setAttribute("tabindex", "0");
-    const img = document.createElement("img");
-    const video = document.createElement("video");
-    if (this._picture.includes("mp4")) {
-      let changeMimeType = this._picture.replace("mp4", "png");
-      img.setAttribute("src", changeMimeType);
-      img.classList.add("artist__media");
-    } else {
-      img.setAttribute("src", this._picture);
-      img.setAttribute("alt", `${this._title} by artist`);
-      img.classList.add("artist__media");
-    }
-    const titleText   = document.createElement("h2");
-    const likesText   = document.createElement("p");
-    const mediaHeader = document.createElement("header");
-
-    likesText.classList.add("likesNumber");
-    // Adding Content
-    titleText.textContent = this._title;
-    likesText.textContent = this._likes;
-    this._picture.includes("mp4")
-      ? article.appendChild(img)
-      : article.appendChild(img);
-    mediaHeader.appendChild(titleText);
-    mediaHeader.appendChild(likesText);
-    article.appendChild(mediaHeader);
+    article.innerHTML = `
+    <div class="media__container">
+      <img src="${this._picture}" alt="${this._title} by ${this._artist}" class="artist__media" title="${this._title}">
+      <header> 
+      <h2 class="media__title">${this._title}</h2>
+      <p class="likesNumber">${this._likes}</p>
+      </header>
+    </div>
+      `
     return article;
   }
 
-  getuserFooterCard() {
-    const footer = document.createElement("footer");
-  }
 }

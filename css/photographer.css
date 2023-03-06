@@ -67,7 +67,7 @@ article p.location {
 .photograph-header {
   background-color: #fafafa;
   height: 300px;
-  margin: 0 110px;
+  margin: 0 110px 60px 110px;
 }
 
 .contact_button {
@@ -178,15 +178,13 @@ textarea {
 
 .userMessage {
   margin-bottom: 25px;
-
 }
-
 
 .photograph__medias {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 25px 51px;
+  margin: 50px 51px 0px 51px;
   justify-content: space-around;
 }
 
@@ -215,7 +213,6 @@ textarea {
   margin: 5px 0px;
 }
 
-
 .slider__block {
   position: fixed;
   top: 0;
@@ -225,7 +222,6 @@ textarea {
   background: rgba(219, 219, 219, 0.7);
   z-index: 10000;
   display: none;
-
 }
 
 .place__image {
@@ -244,12 +240,11 @@ textarea {
   border-radius: 0%;
 }
 
-
 .right__direction {
   position: absolute;
   top: 45%;
   right: 10%;
-  color: #901C1C;
+  color: #901c1c;
   cursor: pointer;
 }
 
@@ -257,7 +252,7 @@ textarea {
   position: absolute;
   top: 45%;
   left: 10%;
-  color: #901C1C;
+  color: #901c1c;
   cursor: pointer;
 }
 
@@ -266,7 +261,7 @@ textarea {
   height: 40px;
   position: absolute;
   top: 6%;
-  color: #901C1C;
+  color: #901c1c;
   right: 11%;
   cursor: pointer;
 }
@@ -284,7 +279,7 @@ i {
   padding: 0;
   overflow: hidden;
   white-space: nowrap;
-  visibility: hidden
+  visibility: hidden;
 }
 
 .wrapper {
@@ -297,47 +292,28 @@ i {
 .label__sort {
   font-size: 20px;
   font-weight: 700;
-  margin-top: 5px;
+  margin: 0px 7px 0px 110px;
 }
 
-.custom__options {
-  background-color: #901C1C;
+#photo__sort {
+  background-color: #901c1c;
   color: white;
+  width: 190px;
   text-align: left;
-  width: 120px;
-  border-radius: 5px;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-}
-.custom__options .options {
-  padding: 10px 0px;
-  cursor: pointer;
-  border-bottom: #fafafa 1px solid;
+  height: 46px;
+  font-size: 18px;
   padding-left: 15px;
-  font-size: 17px;
-  height: 50px;
-}
-.full__height {
-  height: 100%;
+  border-radius: 7px;
 }
 
-.thirdOption {
-  order: 3;
-}
-.secondOption {
-  order: 4;
-}
-.firstOption {
-  order: 1;
-}
 
-footer { 
+footer {
   display: flex;
   flex-grow: 1;
   width: 100%;
   position: relative;
 }
+
 .likesFooter {
   display: flex;
   justify-content: space-between;
@@ -345,15 +321,17 @@ footer {
   position: fixed;
   bottom: 0px;
   right: 20px;
-  background-color: #DB8876;
+  background-color: #db8876;
   width: 200px;
   height: 50px;
   padding: 15px;
-  border-radius: 5px 5px 0px 0px ;
+  border-radius: 5px 5px 0px 0px;
 }
+
 .totalOFlIkes {
   margin-right: 5px;
 }
+
 .partOfLikes {
   display: flex;
   align-items: center;

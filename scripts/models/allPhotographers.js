@@ -14,28 +14,14 @@ class allPhotographers {
     const article                   = document.createElement( 'article' );
     article.setAttribute('role', 'listitem');
     article.setAttribute('tabindex', '0');
-    const img                       = document.createElement( 'img' );
-    img.setAttribute("src", this.picture)
-    img.setAttribute("alt", `photo de ${this.name}`) 
-    const h2                        = document.createElement( 'h2' );
-    const pricePhotographer         = document.createElement( 'p' );
-    const taglinePhotographer       = document.createElement( 'p' );
-    const locationPhotographer      = document.createElement( 'p' );
-    const link                      = document.createElement( 'a' );
-  
-    // Adding Content
-    locationPhotographer.textContent  = this.location;
-    h2.textContent                    = this.name;
-    pricePhotographer.textContent     = (`${this.price}€/jour`) ;
-    taglinePhotographer.textContent   = this.tagline;
-    link.setAttribute("href", `photographer.html?id=${this.id}`);
-    article.appendChild(link);
-    link.appendChild(img);
-    link.appendChild(h2);
-    article.appendChild(locationPhotographer);
-    article.appendChild(taglinePhotographer);
-    article.appendChild(pricePhotographer);
-    console.log(this.price);
+     article.innerHTML = `
+     <a href= photographer.html?id=${this.id}>
+     <img src=${this.picture} alt="photo de ${this.name}">
+     <h2>${this.name}</h2>
+     </a>
+     <p>${this.location}</p>
+     <p>${this.tagline}</p>
+     <p>${this.price}€/jour</p>`
     return article;
   }
 }

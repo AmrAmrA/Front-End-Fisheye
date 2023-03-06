@@ -171,6 +171,9 @@ function giveNegativeIndex() {
   }
   let header = document.querySelector("header");
   header.setAttribute("tabindex", "-1");
+
+  const dropDown = document.querySelector("#photo__sort");
+  dropDown.setAttribute("tabindex", "-1");
 }
 
 function givePositivIndex() {
@@ -184,6 +187,10 @@ function givePositivIndex() {
   }
   let header = document.querySelector("header");
   header.setAttribute("tabindex", "-1");
+
+
+  const dropDown = document.querySelector("#photo__sort");
+  dropDown.setAttribute("tabindex", "-1");
 }
 
 // close the modal with the escape key
@@ -197,6 +204,7 @@ function closeModaleForm() {
   giveNegativeIndex();
 }
 
+
 function openModal() {
   contact_modal.setAttribute("aria-hidden", "false");
   body.setAttribute("aria-hidden", "true");
@@ -204,7 +212,6 @@ function openModal() {
   globalFilter.classList.add("toggleVisibility");
   crossClose.focus();
   givePositivIndex();
-
   body.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
       closeModaleForm();
