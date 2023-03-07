@@ -1,16 +1,28 @@
-const headerButton = document.querySelector(".header__button");
-const contact_modal = document.querySelector("#contact_modal");
-const globalFilter = document.querySelector(".globalFilter");
-const crossClose = document.querySelector(".cross__close");
-const firstnameInput = document.querySelector("#firstName");
-const lastNameInput = document.querySelector("#lastName");
-const mailInput = document.querySelector("#email");
-const messageArea = document.querySelector("#message");
-const form = document.querySelector("form");
-const errorMessages = document.querySelectorAll(".error__data");
-const controlText = document.querySelectorAll(".text__control");
-const allInputs = document.querySelectorAll("input");
-const body = document.querySelector("body");
+const headerButton                = document.querySelector(".header__button");
+const contact_modal               = document.querySelector("#contact_modal");
+const globalFilter                = document.querySelector(".globalFilter");
+const crossClose                  = document.querySelector(".cross__close");
+const firstnameInput              = document.querySelector("#firstName");
+const lastNameInput               = document.querySelector("#lastName");
+const mailInput                   = document.querySelector("#email");
+const messageArea                 = document.querySelector("#message");
+const form                        = document.querySelector("form");
+const errorMessages               = document.querySelectorAll(".error__data");
+const controlText                 = document.querySelectorAll(".text__control");
+const allInputs                   = document.querySelectorAll("input");
+const body                        = document.querySelector("body");
+const sliderBlock                 = document.querySelector(".slider__block");
+const PhotographerId              = new URLSearchParams(window.location.search).get("id");
+const mediaSection                = document.querySelector(".photograph__medias");
+const photographersSection        = document.querySelector(".photograph-header");
+const pageHeader                  = document.querySelector(".page__header");
+const optionTitle                 = document.querySelector(".select__title");
+let totalOfLikes                  = document.querySelector(".totalOFlIkes");
+let moneyDay                      = document.querySelector(".moneyDay");
+let labelText                     = document.querySelector(".label__sort");
+const modalHeader                 = document.querySelector(".modal__header");
+
+
 
 // Open the modal and the filter
 headerButton.addEventListener("click", openModal);
@@ -149,72 +161,62 @@ displayDataAndMedia().then((data) => {
       if (photographPage.id == PhotographerId) {
         const { name } = photographPage;
         const contactTitle = document.querySelector(".contact__title");
-        contactTitle.focus();
         contactTitle.setAttribute("tabindex", "0");
-        contactTitle.innerHTML = `
-          <h2 class="contact__title">Contactez-moi <br> ${name}</h2>`;
+        contactTitle.innerHTML = 
+        `Contactez-moi <br> ${name}`;
         contact_modal.setAttribute("name", `Contactez-moi ${name}`);
+        contactTitle.focus();
       }
     }
   }
 });
 
-function giveNegativeIndex() {
-  let mediaSection = document.querySelectorAll(".photograph__medias article");
-  for (let media of mediaSection) {
-    media.setAttribute("tabindex", "0");
-  }
-
-  let photographerdivs = document.querySelectorAll(".photograph-header div");
-  for (let div of photographerdivs) {
-    div.setAttribute("tabindex", "0");
-  }
-  let header = document.querySelector("header");
-  header.setAttribute("tabindex", "-1");
-
-  const dropDown = document.querySelector("#photo__sort");
-  dropDown.setAttribute("tabindex", "-1");
+function closeWithEnter() {
+  crossClose.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      closeModaleForm()
+    }
+  });
 }
 
-function givePositivIndex() {
-  let mediaSection = document.querySelectorAll(".photograph__medias article");
-  for (let media of mediaSection) {
-    media.setAttribute("tabindex", "-1");
-  }
-  let photographerdivs = document.querySelectorAll(".photograph-header div");
-  for (let div of photographerdivs) {
-    div.setAttribute("tabindex", "-1");
-  }
-  let header = document.querySelector("header");
-  header.setAttribute("tabindex", "-1");
 
-
-  const dropDown = document.querySelector("#photo__sort");
-  dropDown.setAttribute("tabindex", "-1");
+function closeWithTab() {
+  body.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      e.preventDefault();
+      closeModaleForm()
+    }
+});
 }
+
+
+
 
 // close the modal with the escape key
-
 function closeModaleForm() {
   contact_modal.setAttribute("aria-hidden", "true");
   body.setAttribute("aria-hidden", "false");
   contact_modal.style.display = "none";
-  globalFilter.classList.remove("toggleVisibility");
   headerButton.focus();
-  giveNegativeIndex();
+  globalFilter.classList.remove("toggleVisibility");
+
 }
 
 
-function openModal() {
+function openModal(e) {
   contact_modal.setAttribute("aria-hidden", "false");
   body.setAttribute("aria-hidden", "true");
   contact_modal.style.display = "block";
-  globalFilter.classList.add("toggleVisibility");
-  crossClose.focus();
-  givePositivIndex();
-  body.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      closeModaleForm();
-    }
-  });
+  globalFilter.classList.add("toggleVisibility"); 
+  const contact__title = document.querySelector(".contact__title");
+  contact__title.focus();
+  closeWithTab(); 
+  closeWithEnter();
 }
+
+contact_modal.addEventListener('keydown', function (e) {
+  if (e.key === "Tab" && e.target.classList == "contact_button") {
+    modalHeader.focus(); 
+  }
+});

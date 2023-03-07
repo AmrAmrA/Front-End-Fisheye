@@ -1,12 +1,3 @@
-const sliderBlock = document.querySelector(".slider__block");
-const PhotographerId = new URLSearchParams(window.location.search).get("id");
-const mediaSection = document.querySelector(".photograph__medias");
-const photographersSection = document.querySelector(".photograph-header");
-const pageHeader = document.querySelector(".page__header");
-const optionTitle = document.querySelector(".select__title");
-
-let totalOfLikes = document.querySelector(".totalOFlIkes");
-let moneyDay = document.querySelector(".moneyDay");
 async function displayDataAndMedia() {
   const response = await fetch("data/photographers.json");
   if (!response.ok) {
@@ -28,7 +19,6 @@ displayDataAndMedia().then((data) => {
         );
         const userCardDOM = photographeModel.getUserCardDOM();
         photographersSection.appendChild(userCardDOM);
-        console.log(photographPage.price);
         moneyDay.textContent = `${photographPage.price}€/ jour`;
       }
     }

@@ -21,8 +21,8 @@
       <article role="listitem"></article>
       <button class="contact_button header__button"> Contactez-moi </button>
     </div>
-    <label for="photo__sort" class="label__sort"> Trier par </label>
-    <select name="photo__sort" id="photo__sort" >
+    <label for="photo__sort" class="label__sort" tabindex="0"> Trier par </label>
+    <select name="photo__sort" id="photo__sort" tabindex="0">
       <option value="popularity" class="select__popularity"> Popularité </option>
       <option value="date" class="select__date">Date</option>
       <option value="title" class="select__title">Titre</option>
@@ -30,11 +30,11 @@
     <section class="photograph__medias"></section>
     <article class="slider__block">
       <div class="place__image">
-        <img src="" alt="" class="central__image">
+        <img src="" alt="" class="central__image" tabindex="0">
       </div>
-      <i class="fas fa-times close__slider" style="width: 35px; height: 35px;"></i>
-      <i class="fas fa-chevron-right  right__direction" style="width: 50px; height: 50px;"></i>
-      <i class="fas fa-chevron-left   left__direction" style="width: 50px; height: 50px;"></i>
+      <i class="fas fa-times close__slider" style="width: 35px; height: 35px;" tabindex="0"></i>
+      <i class="fas fa-chevron-right  right__direction" style="width: 50px; height: 50px;" tabindex="0"></i>
+      <i class="fas fa-chevron-left   left__direction" style="width: 50px; height: 50px;" tabindex="0"></i>
     </article>
     <footer>
       <div class="likesFooter">
@@ -51,7 +51,7 @@
   <div class="globalFilter"></div>
   <div id="contact_modal" role="dialog" aria-hidden="true" >
     <div class="modal">
-      <header tabindex="0">
+      <header class="modal__header" tabindex="0">
         <h2 class="contact__title" role="heading" tabindex="0">Contactez-moi </h2>
         <img src="assets/icons/close.svg" alt="close Contact Form" class="cross__close"  tabindex="0"/>
       </header>

@@ -14,11 +14,8 @@ class mediaFactory {
 
   getuserGalleryCard() {
     
-    console.log(this._picture); 
-    if(this._picture.includes('mp4')){
-      this._picture = this._picture.replace("mp4", "png");
-    }
-    this._picture.includes("mp4") ? this._picture.replace("mp4", "png") : '';
+    if(this._picture.includes('mp4')){this._picture = this._picture.replace("mp4", "png");}
+
     const article = document.createElement("article");
     article.setAttribute("tabindex", "0");
     article.innerHTML = `
@@ -26,11 +23,13 @@ class mediaFactory {
       <img src="${this._picture}" alt="${this._title} by ${this._artist}" class="artist__media" title="${this._title}">
       <header> 
       <h2 class="media__title">${this._title}</h2>
+      <div class="media__likes">
       <p class="likesNumber">${this._likes}</p>
+      <i class="fas fa-heart heart__media"></i>
+      </div>
       </header>
     </div>
       `
     return article;
   }
-
 }

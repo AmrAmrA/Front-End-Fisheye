@@ -180,11 +180,15 @@ textarea {
   margin-bottom: 25px;
 }
 
+main {
+  margin-bottom: 35px;
+}
+
 .photograph__medias {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 50px 51px 0px 51px;
+  margin: 50px 100px 0px 96px;
   justify-content: space-around;
 }
 
@@ -194,8 +198,8 @@ textarea {
 
 .photograph__medias article video,
 .photograph__medias article img {
-  height: 200px;
-  width: 350px;
+  height: 250px;
+  width: 400px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -204,6 +208,7 @@ textarea {
 .photograph__medias article header h2 {
   color: #901c1c;
   font-size: 18px;
+  margin-right: 7px;
 }
 
 .photograph__medias article header {
@@ -211,6 +216,16 @@ textarea {
   justify-content: space-between;
   align-items: center;
   margin: 5px 0px;
+}
+
+.media__likes {
+  display: flex;
+  align-items: center;
+  margin-right: 1px;
+}
+
+.heart__media {
+  color: #901C1C;
 }
 
 .slider__block {
@@ -317,14 +332,13 @@ footer {
 .likesFooter {
   display: flex;
   justify-content: space-between;
-
   position: fixed;
   bottom: 0px;
   right: 20px;
   background-color: #db8876;
-  width: 200px;
-  height: 50px;
-  padding: 15px;
+  width: 185px;
+  height: 40px;
+  padding: 0 12px;
   border-radius: 5px 5px 0px 0px;
 }
 
@@ -333,6 +347,11 @@ footer {
 }
 
 .partOfLikes {
+  display: flex;
+  align-items: center;
+}
+
+.moneyDay {
   display: flex;
   align-items: center;
 }

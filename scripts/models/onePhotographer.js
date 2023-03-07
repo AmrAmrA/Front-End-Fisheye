@@ -37,7 +37,7 @@ class onePhotographer{
       firstdiv.appendChild(taglinePhotographer);
       firstdiv.setAttribute('tabindex', '0')
       seconddiv.appendChild(buttonContart);
-      seconddiv.setAttribute('tabindex', '0')
+      seconddiv.setAttribute('tabindex', '-1')
       thirddiv.appendChild(img);
       thirddiv.setAttribute('tabindex', '0')
 
