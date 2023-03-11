@@ -355,3 +355,8 @@ footer {
   display: flex;
   align-items: center;
 }
+
+.unclickable {
+  cursor: not-allowed;
+  pointer-events: none;
+}
