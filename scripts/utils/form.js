@@ -17,11 +17,14 @@ const mediaSection                = document.querySelector(".photograph__medias"
 const photographersSection        = document.querySelector(".photograph-header");
 const pageHeader                  = document.querySelector(".page__header");
 const optionTitle                 = document.querySelector(".select__title");
+const optionDate                  = document.querySelector(".select__date");
+const optionLikes                 = document.querySelector(".select__popularity");  
 let totalOfLikes                  = document.querySelector(".totalOFlIkes");
 let moneyDay                      = document.querySelector(".moneyDay");
 let labelText                     = document.querySelector(".label__sort");
 const modalHeader                 = document.querySelector(".modal__header");
-
+const allLikes                    = document.querySelectorAll(".likesNumber");
+console.log(allLikes);
 
 
 // Open the modal and the filter
