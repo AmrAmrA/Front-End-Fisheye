@@ -1,6 +1,6 @@
-let tableau = [];
-let tableauDates = [];
-let tableauLikes = [];
+let arraytitles = [];
+let arrayDates = [];
+let arrayLikes = [];
 
 async function displayDataAndMedia() {
   const response = await fetch("data/photographers.json");
@@ -33,33 +33,43 @@ displayDataAndMedia().then((data) => {
       const mediaModel = new mediaFactory(media);
       const mediaCardDOM = mediaModel.getuserGalleryCard();
       mediaSection.appendChild(mediaCardDOM);
-      tableau.push(mediaCardDOM);
-      tableau.sort((a, b) => a.title > b.title);
-      
-            optionTitle.addEventListener("click", () => {
-              for (let i = 0; i < tableau.length; i++) {
-                mediaSection.appendChild(tableau[i]);
-              }
-            });
-      
-      tableauDates.push(mediaCardDOM);
-      tableauDates.sort((a, b) => a.date < b.date);
-      
+
+      // gathering the media by alphabetical order in an array
+      arraytitles.push(mediaCardDOM);
+      arraytitles.sort((a, b) => a.title > b.title);
+
+      // Display the media by alphabetical order in the dom
+      optionTitle.addEventListener("click", () => {
+        for (let i = 0; i < arraytitles.length; i++) {
+          mediaSection.appendChild(arraytitles[i]);
+        }
+      });
+      // gathering the media by date in an array
+      arrayDates.push(mediaCardDOM);
+      // Display the media by date in the dom
       optionDate.addEventListener("click", () => {
-        for (let i = 0; i < tableauDates.length; i++) {
-          mediaSection.appendChild(tableauDates[i]);
+        for (let i = 0; i < arrayDates.length; i++) {
+          parseInt(arrayDates[i].getAttribute("date"));
+          arrayDates.sort( (a, b) => parseInt(a.getAttribute("date")) > parseInt(b.getAttribute("date")) );
+          mediaSection.appendChild(arrayDates[i]);
         }
       });
 
-
-      tableauLikes.push(mediaCardDOM);
+      // gathering the media by likes in an array
+      arrayLikes.push(mediaCardDOM);
+      // Display the media by likes in the dom
       optionLikes.addEventListener("click", () => {
-      for (let i = 0; i < tableauLikes.length; i++) {
-       parseInt(tableauLikes[i].getAttribute("likes"));
-        tableauLikes.sort((a, b) => parseInt(a.getAttribute("likes")) < parseInt(b.getAttribute("likes")));
-        mediaSection.appendChild((tableauLikes[i]));                                                                   
-      }
-    })}; 
+        for (let i = 0; i < arrayLikes.length; i++) {
+          parseInt(arrayLikes[i].getAttribute("likes"));
+          arrayLikes.sort(
+            (a, b) =>
+              parseInt(a.getAttribute("likes")) <
+              parseInt(b.getAttribute("likes"))
+          );
+          mediaSection.appendChild(arrayLikes[i]);
+        }
+      });
+    }
     const AllLikes = document.querySelectorAll(".likesNumber");
     let zero = 0;
     for (let i = 0; i < AllLikes.length; i++) {

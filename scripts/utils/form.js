@@ -24,7 +24,7 @@ let moneyDay                      = document.querySelector(".moneyDay");
 let labelText                     = document.querySelector(".label__sort");
 const modalHeader                 = document.querySelector(".modal__header");
 const allLikes                    = document.querySelectorAll(".likesNumber");
-console.log(allLikes);
+const centralImage                = document.querySelector(".central__image");
 
 
 // Open the modal and the filter
@@ -217,7 +217,6 @@ function openModal(e) {
   closeWithTab(); 
   closeWithEnter();
 }
-
 contact_modal.addEventListener('keydown', function (e) {
   if (e.key === "Tab" && e.target.classList == "contact_button") {
     modalHeader.focus(); 

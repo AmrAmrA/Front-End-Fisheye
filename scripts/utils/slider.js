@@ -1,26 +1,54 @@
-const centralImage = document.querySelector(".central__image");
-
-
-
-
-
+let un = 1;
 function displaySlider() {
+  let heartMedia = document.querySelectorAll(".heart__media");
+  let likesNumberMedia = document.querySelectorAll(".likesNumber");
+
+  // for (let i = 0; i < heartMedia.length; i++) {
+  //   heartMedia[i].addEventListener("click", () => {
+  //     if (heartMedia[i].classList.toggle("liked")) {
+  //       likesNumberMedia[i].textContent++;
+  //       totalOfLikes.textContent++;
+  //       console.log(heartMedia[i].classList);
+  //       heartMedia[i].classList.remove("liked");
+  //     } else {
+  //       likesNumberMedia[i].textContent--;
+  //       totalOfLikes.textContent--;
+  //       console.log(heartMedia[i].classList);
+  //     }
+  //   });
+  // }
+
+  heartMedia.forEach((heart, index) => {
+    heart.addEventListener("click", (e) => {
+      if (e.target.nearestViewportElement.classList.contains("heart__toggle") && un == 1 ) {
+        likesNumberMedia[index].textContent++;
+        totalOfLikes.textContent++;
+        un++;
+      } else {
+        likesNumberMedia[index].textContent--;
+        totalOfLikes.textContent--;
+        un--;
+      }
+    });
+  });
+
+
+
+
   const rightArrow = document.querySelector(".right__direction");
   const leftArrow = document.querySelector(".left__direction");
   const allMedia = document.querySelectorAll(".artist__media");
-  
 
   for (let oneMedia of allMedia) {
     const mediaArray = Array.from(allMedia);
     oneMedia.addEventListener("click", (e) => {
-
       centralImage.src = e.target.src;
       e.target.classList.remove("photo");
       let mediaIndex = mediaArray.indexOf(e.target);
       rightArrow.addEventListener("click", nextSlide);
       leftArrow.addEventListener("click", previousSlide);
       openTheSlider();
-      
+
       function nextSlide() {
         if (mediaIndex < mediaArray.length - 1) {
           centralImage.src = mediaArray[mediaIndex + 1].src;
@@ -57,9 +85,6 @@ function displaySlider() {
 
 setTimeout(displaySlider, 1000);
 
-
-
-
 function openTheSlider() {
   sliderBlock.style.display = "block";
   mediaSection.style.display = "none";
@@ -76,9 +101,7 @@ function openTheSlider() {
       closeTheSlider();
     }
   });
-
 }
-
 
 function closeTheSlider() {
   sliderBlock.style.display = "none";

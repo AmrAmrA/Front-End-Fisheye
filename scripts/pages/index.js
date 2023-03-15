@@ -27,6 +27,3 @@
     };
     
     init();
-    
-
-    const listArticles = document.querySelectorAll("article");
