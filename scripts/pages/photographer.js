@@ -42,27 +42,36 @@ displayDataAndMedia().then((data) => {
       const total = (zero += parseInt(allLike.textContent));
       totalOfLikes.textContent = `${total}`;
     }
+
+    const select = document.querySelector("#photo__sort");
+    select.addEventListener("click", (event) => {
+      const value = event.target.value;
+      arraySort.push(mediaCardDOM);
+      console.log(arraySort);
+      switch (value) {
+        case "title":
+          arraySort.sort((a, b) => a.title > b.title);
+          break;
+        case "date":
+          arraySort.sort(
+            (a, b) =>
+              parseInt(a.getAttribute("date")) >
+              parseInt(b.getAttribute("date"))
+          );
+          break;
+        case "popularity":
+          arraySort.sort(
+            (a, b) =>
+              parseInt(a.getAttribute("likes")) <
+              parseInt(b.getAttribute("likes"))
+          );
+          break;
+      }
+      // Tu mets à jour ton DOM
+      mediaSection.innerHTML = "";
+      for (const element of arraySort) {
+        mediaSection.appendChild(element);
+      }
+    });
   }
-
-  const select = document.querySelector("#photo__sort");
-  select.addEventListener("change", (event) => {
-    const value = event.target.value;
-    arraySort.push(...medias);
-    switch (value) {
-      case "title":
-        arraySort.sort((a, b) => a.title > b.title);
-        break;
-      case "date":
-        arraySort.sort((a, b) => parseInt(a.date) > parseInt(b.date));
-        break;
-      case "likes":
-        arraySort.sort((a, b) => parseInt(a.likes) > parseInt(b.likes));
-        break;
-    }
-    // Tu mets à jour ton DOM
-    mediaSection.innerHTML = "";
-    for (const element of arraySort) mediaSection.appendChild(medias);
-  });
-  console.log(medias);
-
 });
