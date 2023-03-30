@@ -26,21 +26,31 @@ function displaySlider() {
 
   function setupSlider(e) {
     const mediaArray = Array.from(allMedia);
-    centralImage.src = e.target.src;
+    if (e.target.dataset.type == "video") {
+    placeImage.innerHTML = `<video src="${e.target.src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls></video>`;}
+    else {
+      placeImage.innerHTML = `<img src="${e.target.src}" class="central__image" loading ="lazy">`;
+    }
+  
     let mediaIndex = mediaArray.indexOf(e.target);
     rightArrow.addEventListener("click", nextSlide);
     leftArrow.addEventListener("click", previousSlide);
+    console.log(placeImage);
     openTheSlider();
 
     function nextSlide() {
-      if (mediaIndex < mediaArray.length - 1) {
-        centralImage.src = mediaArray[mediaIndex + 1].src;
+       if (mediaIndex < mediaArray.length - 1 && e.target.dataset.type == "image") {
+        placeImage.innerHTML = `<img src="${mediaArray[mediaIndex + 1].src}" class="central__image" loading ="lazy">`;
         mediaIndex++;
-        return;
+        console.log(mediaArray);
       }
-      centralImage.src = mediaArray[0].src;
-      mediaIndex = 0;
-      return;
+
+      else {
+        centralImage.src = mediaArray[0].src;
+        mediaIndex = 0;
+        return;
+
+      }
     }
 
     function previousSlide() {
