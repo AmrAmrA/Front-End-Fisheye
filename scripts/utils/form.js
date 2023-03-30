@@ -25,6 +25,7 @@ let labelText                     = document.querySelector(".label__sort");
 const modalHeader                 = document.querySelector(".modal__header");
 const allLikes                    = document.querySelectorAll(".likesNumber");
 const centralImage                = document.querySelector(".central__image");
+const placeImage                  = document.querySelector(".place__image");
 
 
 // Open the modal and the filter

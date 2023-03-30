@@ -44,10 +44,9 @@ displayDataAndMedia().then((data) => {
     }
 
     const select = document.querySelector("#photo__sort");
-    select.addEventListener("click", (event) => {
+    select.addEventListener("input", (event) => {
       const value = event.target.value;
       arraySort.push(mediaCardDOM);
-      console.log(arraySort);
       switch (value) {
         case "title":
           arraySort.sort((a, b) => a.title > b.title);

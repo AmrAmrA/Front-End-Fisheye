@@ -15,22 +15,25 @@ class mediaFactory {
   }
 
   getuserGalleryCard() {
+    
+    const article = document.createElement("article");
+    this.type = "image"
     if (this.picture.includes("mp4")) {
       this.picture = this.picture.replace("mp4", "png");
+      article.classList.add("video");
+      this.type = "video"
     }
-
-    const article = document.createElement("article");
     article.setAttribute("tabindex", "0");
     article.setAttribute("title", `${this.title}`);
     article.setAttribute("date", `${this.date}`);
     article.setAttribute("likes", `${this.likes}`);
     article.innerHTML = `
-      <img src="${this.picture}" alt="${this.title} by ${this.artist}" class="artist__media" title="${this.title}" loading ="lazy">
+      <img src="${this.picture}" class="artist__media" title="${this.title}" data-type="${this.type}" tabindex = "0" loading ="lazy">
       <header> 
-      <h2 class="media__title">${this.title}</h2>
+      <h2 class="media__title" tabindex = "0">${this.title}</h2>
       <div class="media__likes">
-      <p class="likesNumber">${this.likes}</p>
-      <i class="fas fa-heart heart__media heart__toggle"></i>
+      <p class="likesNumber" tabindex = "0">${this.likes}</p>
+      <i class="fas fa-heart heart__media heart__toggle" aria-label = "likes" tabindex = "0"></i>
       </div>
       </header>
       `;
