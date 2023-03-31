@@ -28,7 +28,7 @@ class mediaFactory {
     article.setAttribute("date", `${this.date}`);
     article.setAttribute("likes", `${this.likes}`);
     article.innerHTML = `
-      <img src="${this.picture}" class="artist__media" title="${this.title}" data-type="${this.type}" tabindex = "0" loading ="lazy">
+      <img src="${this.picture}" class="artist__media" title="${this.title}" alt = "${this.title}" data-type="${this.type}" tabindex = "0" loading ="lazy">
       <header> 
       <h2 class="media__title" tabindex = "0">${this.title}</h2>
       <div class="media__likes">
