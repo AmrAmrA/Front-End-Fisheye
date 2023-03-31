@@ -39,14 +39,18 @@ function displaySlider() {
     openTheSlider();
 
     function nextSlide() {
-       if (mediaIndex < mediaArray.length - 1 && e.target.dataset.type == "image") {
-        placeImage.innerHTML = `<img src="${mediaArray[mediaIndex + 1].src}" class="central__image" loading ="lazy">`;
+       if (mediaIndex < mediaArray.length - 1 && mediaArray[mediaIndex+1].dataset.type=== "video") {
+        placeImage.innerHTML = `<video src="${mediaArray[mediaIndex+1].src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls></video>`;
         mediaIndex++;
-        console.log(mediaArray);
       }
 
+      else if (mediaIndex < mediaArray.length - 1 && mediaArray[mediaIndex+1].dataset.type === "image") {
+        placeImage.innerHTML = `<img src="${mediaArray[mediaIndex+1].src}" class="central__image" loading ="lazy">`;
+        mediaIndex++;
+
+      }
       else {
-        centralImage.src = mediaArray[0].src;
+           placeImage.innerHTML = `<img src="${mediaArray[0].src}" class="central__image" loading ="lazy">`;
         mediaIndex = 0;
         return;
 
@@ -54,12 +58,18 @@ function displaySlider() {
     }
 
     function previousSlide() {
-      if (mediaIndex > 0) {
-        centralImage.src = mediaArray[mediaIndex - 1].src;
+      if (mediaIndex > 0 && mediaArray[mediaIndex-1].dataset.type === "video") {
+        placeImage.innerHTML = `<video src="${mediaArray[mediaIndex-1].src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls></video>`;
         mediaIndex--;
-      } else {
-        centralImage.src = mediaArray[mediaArray.length - 1].src;
+      } 
+      
+      else if (mediaIndex > 0 && mediaArray[mediaIndex-1].dataset.type === "image") {
+        placeImage.innerHTML = `<img src="${mediaArray[mediaIndex-1].src}" class="central__image" loading ="lazy">`;
+        mediaIndex--;
+      }
+      else  {
         mediaIndex = mediaArray.length - 1;
+        placeImage.innerHTML = `<img src="${mediaArray[mediaIndex].src}" class="central__image" loading ="lazy">`;
       }
     }
 
