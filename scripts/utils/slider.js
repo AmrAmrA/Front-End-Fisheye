@@ -27,12 +27,12 @@ function displaySlider() {
   function setupSlider(e) {
     const mediaArray = Array.from(allMedia);
     if (e.target.dataset.type == "video") {
-    placeImage.innerHTML = `<video src="${e.target.src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls></video>
-    <h2 class="central__image__legend">${e.target.alt}</h2>
+    placeImage.innerHTML = `<video src="${e.target.src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls tabindex="0"></video>
+    <h2 class="central__image__legend" tabindex="0">${e.target.alt}</h2>
     `;}
     else {
-      placeImage.innerHTML = `<img src="${e.target.src}" class="central__image" loading ="lazy">
-      <h2 class="central__image__legend">${e.target.alt}</h2>`;
+      placeImage.innerHTML = `<img src="${e.target.src}" class="central__image" loading ="lazy" tabindex="0">
+      <h2 class="central__image__legend" tabindex="0">${e.target.alt}</h2>`;
     }
   
     let mediaIndex = mediaArray.indexOf(e.target);
@@ -43,40 +43,57 @@ function displaySlider() {
 
     function nextSlide() {
        if (mediaIndex < mediaArray.length - 1 && mediaArray[mediaIndex+1].dataset.type=== "video") {
-        placeImage.innerHTML = `<video src="${mediaArray[mediaIndex+1].src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls></video>
-        <h2 class="central__image__legend">${mediaArray[mediaIndex+1].alt} </h2>`;
+        placeImage.innerHTML = `<video src="${mediaArray[mediaIndex+1].src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls tabindex="0"> </video>
+        <h2 class="central__image__legend" tabindex="0">${mediaArray[mediaIndex+1].alt} </h2>`;
         mediaIndex++;
       }
 
       else if (mediaIndex < mediaArray.length - 1 && mediaArray[mediaIndex+1].dataset.type === "image") {
-        placeImage.innerHTML = `<img src="${mediaArray[mediaIndex+1].src}" class="central__image" loading ="lazy">
-        <h2 class="central__image__legend">${mediaArray[mediaIndex+1].alt} </h2>`;
+        placeImage.innerHTML = `<img src="${mediaArray[mediaIndex+1].src}" class="central__image" loading ="lazy" tabindex="0">
+        <h2 class="central__image__legend" tabindex="0">${mediaArray[mediaIndex+1].alt} </h2> `;
         mediaIndex++;
 
       }
+      else if (mediaArray[0].dataset.type === "video") {
+           placeImage.innerHTML = 
+           `<video src="${mediaArray[0].src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls tabindex="0"></video>
+           <h2 class="central__image__legend" tabindex="0">${mediaArray[0].alt} </h2>`;
+         mediaIndex = 0;
+ 
+
+      }
       else {
-           placeImage.innerHTML = `<img src="${mediaArray[0].src}" class="central__image" loading ="lazy">`;
+           placeImage.innerHTML = `<img src="${mediaArray[0].src}" class="central__image" loading ="lazy" tabindex="0">
+           <h2 class="central__image__legend" tabindex="0">${mediaArray[0].alt} </h2>`;
         mediaIndex = 0;
-        return;
 
       }
     }
 
     function previousSlide() {
       if (mediaIndex > 0 && mediaArray[mediaIndex].dataset.type === "video") {
-        placeImage.innerHTML = `<video src="${mediaArray[mediaIndex].src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls></video>`;
+        placeImage.innerHTML = `<video src="${mediaArray[mediaIndex].src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls tabindex="0"></video>
+        <h2 class="central__image__legend" tabindex="0">${mediaArray[mediaIndex].alt} </h2>`;
         mediaIndex--;
       } 
       
       else if (mediaIndex > 0 && mediaArray[mediaIndex].dataset.type === "image") {
-        placeImage.innerHTML = `<img src="${mediaArray[mediaIndex].src}" class="central__image" loading ="lazy">`;
+        placeImage.innerHTML = `<img src="${mediaArray[mediaIndex].src}" class="central__image" loading ="lazy" tabindex="0">
+        <h2 class="central__image__legend" tabindex="0">${mediaArray[mediaIndex].alt} </h2>`;
         mediaIndex--;
 
       }
-      else if (mediaIndex == 0) {
-        placeImage.innerHTML = `<img src="${mediaArray[mediaArray.length - 1].src}" class="central__image" loading ="lazy">`;
+      else if (mediaIndex == 0 && mediaArray[mediaIndex].dataset.type === "video") {
+        placeImage.innerHTML = `
+        <video src="${mediaArray[mediaIndex].src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls tabindex="0"></video>
+        <h2 class="central__image__legend" tabindex="0">${mediaArray[mediaIndex].alt} </h2>
+        `;
         mediaIndex = mediaArray.length - 1;
-        console.log(mediaIndex);
+      }
+      else {
+        placeImage.innerHTML = `<img src="${mediaArray[mediaIndex].src}" class="central__image" loading ="lazy" tabindex="0">
+        <h2 class="central__image__legend" tabindex="0">${mediaArray[mediaIndex].alt} </h2>`;
+        mediaIndex = mediaArray.length - 1;
       }
     }
 
