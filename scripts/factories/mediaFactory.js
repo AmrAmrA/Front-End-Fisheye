@@ -17,11 +17,11 @@ class mediaFactory {
   getuserGalleryCard() {
     
     const article = document.createElement("article");
-    this.type = "image"
+    this.type = `image`
     if (this.picture.includes("mp4")) {
       this.picture = this.picture.replace("mp4", "png");
       article.classList.add("video");
-      this.type = "video"
+      this.type = `video`
     }
     article.setAttribute("tabindex", "0");
     article.setAttribute("title", `${this.title}`);

@@ -1,3 +1,4 @@
+const sliderBlock                 = document.querySelector(".slider__block");
 function displaySlider() {
   // function to increase or decrease the number of likes
   likesContent();
@@ -25,15 +26,12 @@ function displaySlider() {
   }
 
   function setupSlider(e) {
+    const placeImage                  = document.querySelector(".place__image");
     const mediaArray = Array.from(allMedia);
-    if (e.target.dataset.type == "video") {
-    placeImage.innerHTML = `<video src="${e.target.src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls tabindex="0"></video>
-    <h2 class="central__image__legend" tabindex="0">${e.target.alt}</h2>
-    `;}
-    else {
-      placeImage.innerHTML = `<img src="${e.target.src}" class="central__image" loading ="lazy" tabindex="0">
+    placeImage.innerHTML = e.target.dataset.type == "video" ? `<video src="${e.target.src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls tabindex="0"></video>
+      <h2 class="central__image__legend" tabindex="0">${e.target.alt}</h2>
+    ` : `<img src="${e.target.src}" class="central__image" loading ="lazy" tabindex="0">
       <h2 class="central__image__legend" tabindex="0">${e.target.alt}</h2>`;
-    }
   
     let mediaIndex = mediaArray.indexOf(e.target);
     rightArrow.addEventListener("click", nextSlide);
@@ -46,28 +44,20 @@ function displaySlider() {
         placeImage.innerHTML = `<video src="${mediaArray[mediaIndex+1].src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls tabindex="0"> </video>
         <h2 class="central__image__legend" tabindex="0">${mediaArray[mediaIndex+1].alt} </h2>`;
         mediaIndex++;
+        return;
       }
-
-      else if (mediaIndex < mediaArray.length - 1 && mediaArray[mediaIndex+1].dataset.type === "image") {
+      if (mediaIndex < mediaArray.length - 1 && mediaArray[mediaIndex+1].dataset.type === "image") {
         placeImage.innerHTML = `<img src="${mediaArray[mediaIndex+1].src}" class="central__image" loading ="lazy" tabindex="0">
         <h2 class="central__image__legend" tabindex="0">${mediaArray[mediaIndex+1].alt} </h2> `;
         mediaIndex++;
+        return;
 
       }
-      else if (mediaArray[0].dataset.type === "video") {
-           placeImage.innerHTML = 
-           `<video src="${mediaArray[0].src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls tabindex="0"></video>
+      document.querySelector(`.place__image`).innerHTML = 
+       mediaArray[0].dataset.type === "video" ? `<video src="${mediaArray[0].src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls tabindex="0"></video>
+           <h2 class="central__image__legend" tabindex="0">${mediaArray[0].alt} </h2>` : `<img src="${mediaArray[0].src}" class="central__image" loading ="lazy" tabindex="0">
            <h2 class="central__image__legend" tabindex="0">${mediaArray[0].alt} </h2>`;
-         mediaIndex = 0;
- 
-
-      }
-      else {
-           placeImage.innerHTML = `<img src="${mediaArray[0].src}" class="central__image" loading ="lazy" tabindex="0">
-           <h2 class="central__image__legend" tabindex="0">${mediaArray[0].alt} </h2>`;
-        mediaIndex = 0;
-
-      }
+      mediaIndex = 0;
     }
 
     function previousSlide() {
@@ -75,32 +65,28 @@ function displaySlider() {
         placeImage.innerHTML = `<video src="${mediaArray[mediaIndex].src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls tabindex="0"></video>
         <h2 class="central__image__legend" tabindex="0">${mediaArray[mediaIndex].alt} </h2>`;
         mediaIndex--;
-      } 
-      
-      else if (mediaIndex > 0 && mediaArray[mediaIndex].dataset.type === "image") {
-        placeImage.innerHTML = `<img src="${mediaArray[mediaIndex].src}" class="central__image" loading ="lazy" tabindex="0">
+        return;
+      }
+      if (mediaIndex > 0 && mediaArray[mediaIndex].dataset.type === "image") {
+        document.querySelector(".place__image").innerHTML = `<img src="${mediaArray[mediaIndex].src}" class="central__image" loading ="lazy" tabindex="0">
         <h2 class="central__image__legend" tabindex="0">${mediaArray[mediaIndex].alt} </h2>`;
         mediaIndex--;
+        return;
 
       }
-      else if (mediaIndex == 0 && mediaArray[mediaIndex].dataset.type === "video") {
-        placeImage.innerHTML = `
+      placeImage.innerHTML = mediaIndex == 0 && mediaArray[mediaIndex].dataset.type === "video" ? `
         <video src="${mediaArray[mediaIndex].src.replace('png', 'mp4')}" class="central__image" loading ="lazy" controls tabindex="0"></video>
         <h2 class="central__image__legend" tabindex="0">${mediaArray[mediaIndex].alt} </h2>
-        `;
-        mediaIndex = mediaArray.length - 1;
-      }
-      else {
-        placeImage.innerHTML = `<img src="${mediaArray[mediaIndex].src}" class="central__image" loading ="lazy" tabindex="0">
+        ` : `<img src="${mediaArray[mediaIndex].src}" class="central__image" loading ="lazy" tabindex="0">
         <h2 class="central__image__legend" tabindex="0">${mediaArray[mediaIndex].alt} </h2>`;
-        mediaIndex = mediaArray.length - 1;
-      }
+      mediaIndex = mediaArray.length - 1;
     }
 
     function arrowClick(event) {
-      if (event.keyCode == 39 || event.keyCode == 13) {
+      if (event.key == "ArrowRight") {
         nextSlide();
-      } else if (event.keyCode == 37) {
+      } 
+      if (event.key == "ArrowLeft") {
         previousSlide();
       }
     }
@@ -112,8 +98,9 @@ function displaySlider() {
 setTimeout(displaySlider, 1000);        
 
 // function to setup the increment of likes
+const totalOfLikes                  = document.querySelector(".totalOFlIkes");
 function likesContent() {
-  let heartMedia = document.querySelectorAll(".heart__media");
+  const heartMedia = document.querySelectorAll(".heart__media");
   const likesNumberMedia = document.querySelectorAll(".likesNumber");
   incrementLikes(heartMedia, likesNumberMedia);
 }
@@ -148,6 +135,10 @@ function incrementLikes(heartMedia, likesNumberMedia) {
 }
 
 // function to open the slider and hide the other elements
+const labelText                   = document.querySelector(".label__sort");
+const pageHeader                  = document.querySelector(".page__header");
+const photographersSection        = document.querySelector(".photograph-header");
+const mediaSection                = document.querySelector(".photograph__medias");
 function openTheSlider() {
   sliderBlock.style.display = "block";
   mediaSection.style.display = "none";

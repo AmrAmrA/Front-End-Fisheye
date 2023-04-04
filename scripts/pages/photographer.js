@@ -11,6 +11,7 @@ async function displayDataAndMedia() {
 }
 
 displayDataAndMedia().then((data) => {
+  const moneyDay                      = document.querySelector(".moneyDay");
   // Display the photographer's card header
   {
     // Tu peux utiliser un find

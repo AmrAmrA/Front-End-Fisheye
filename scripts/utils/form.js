@@ -1,38 +1,16 @@
 const headerButton                = document.querySelector(".header__button");
-const contact_modal               = document.querySelector("#contact_modal");
-const globalFilter                = document.querySelector(".globalFilter");
 const crossClose                  = document.querySelector(".cross__close");
-const firstnameInput              = document.querySelector("#firstName");
-const lastNameInput               = document.querySelector("#lastName");
-const mailInput                   = document.querySelector("#email");
-const messageArea                 = document.querySelector("#message");
-const form                        = document.querySelector("form");
-const errorMessages               = document.querySelectorAll(".error__data");
-const controlText                 = document.querySelectorAll(".text__control");
-const allInputs                   = document.querySelectorAll("input");
-const body                        = document.querySelector("body");
-const sliderBlock                 = document.querySelector(".slider__block");
-const PhotographerId              = new URLSearchParams(window.location.search).get("id");
-const mediaSection                = document.querySelector(".photograph__medias");
-const photographersSection        = document.querySelector(".photograph-header");
-const pageHeader                  = document.querySelector(".page__header");
-const optionTitle                 = document.querySelector(".select__title");
-const optionDate                  = document.querySelector(".select__date");
-const optionLikes                 = document.querySelector(".select__popularity");  
-let totalOfLikes                  = document.querySelector(".totalOFlIkes");
-let moneyDay                      = document.querySelector(".moneyDay");
-let labelText                     = document.querySelector(".label__sort");
-const modalHeader                 = document.querySelector(".modal__header");
-const allLikes                    = document.querySelectorAll(".likesNumber");
-const centralImage                = document.querySelector(".central__image");
-const placeImage                  = document.querySelector(".place__image");
-
-
 // Open the modal and the filter
 headerButton.addEventListener("click", openModal);
 // Close the modal and hide the filter
 crossClose.addEventListener("click", closeModaleForm);
 
+// Variables to prepare the form 
+const firstnameInput              = document.querySelector("#firstName");
+const lastNameInput               = document.querySelector("#lastName");
+const mailInput                   = document.querySelector("#email");
+const messageArea                 = document.querySelector("#message");
+const form                        = document.querySelector("form");
 // Launch events on inputs to verify if they are valid
 firstnameInput.addEventListener("blur", firstNameValidation);
 firstnameInput.addEventListener("input", firstNameValidation);
@@ -56,6 +34,8 @@ const inputsValidities = {
 
 // Function to show the error message and change the border color
 function showValidation({ index, validation }) {
+  const errorMessages               = document.querySelectorAll(".error__data");
+  const controlText                 = document.querySelectorAll(".text__control");
   if (validation) {
     errorMessages[index].style.display = "none";
     if (controlText[index]) {
@@ -134,31 +114,32 @@ function handleFormSubmit(event) {
       const index = keys.indexOf(key);
       showValidation({ index, validation: false });
     });
-  } else {
-    // Show user's informations
-    console.log(
-      "firstName :",
-      firstnameInput.value,
-      "lastName :",
-      lastNameInput.value,
-      "email :",
-      mailInput.value,
-      "message :",
-      messageArea.value
-    );
-    form.reset();
-    controlText.forEach((input) => {
-      input.style.border = "none";
-    });
-    closeModaleForm();
+    return;
   }
+  // Show user's informations
+  console.log(
+    "firstName :",
+    firstnameInput.value,
+    "lastName :",
+    lastNameInput.value,
+    "email :",
+    mailInput.value,
+    "message :",
+    messageArea.value
+  );
+  form.reset();
+  controlText.forEach((input) => {
+    input.style.border = "none";
+  });
+  closeModaleForm();
 }
 
 /**
  * When the user clicks the close button, the modal is hidden, the body is no longer hidden, the global
  * filter is toggled, the focus is set to the header button, and the body is no longer scrollable.
  */
-
+const contact_modal               = document.querySelector("#contact_modal");
+const PhotographerId              = new URLSearchParams(window.location.search).get("id");
 displayDataAndMedia().then((data) => {
   {
     for (const photographPage of data.photographers) {
@@ -184,7 +165,7 @@ function closeWithEnter() {
   });
 }
 
-
+const body                        = document.querySelector("body");
 function closeWithTab() {
   body.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
@@ -198,6 +179,7 @@ function closeWithTab() {
 
 
 // close the modal with the escape key
+const globalFilter                = document.querySelector(".globalFilter");
 function closeModaleForm() {
   contact_modal.setAttribute("aria-hidden", "true");
   body.setAttribute("aria-hidden", "false");
@@ -218,6 +200,7 @@ function openModal(e) {
   closeWithTab(); 
   closeWithEnter();
 }
+const modalHeader                 = document.querySelector(".modal__header");
 contact_modal.addEventListener('keydown', function (e) {
   if (e.key === "Tab" && e.target.classList == "contact_button") {
     modalHeader.focus(); 
