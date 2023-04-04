@@ -124,7 +124,7 @@ function displaySlider() {
     leftArrow.addEventListener('click', previousSlide);
 
     function arrowClick(event) {
-      if (event.key === 'ArrowRight') {
+      if (event.key === 'ArrowRight' || event.key === 'Enter') {
         nextSlide();
       }
       if (event.key === 'ArrowLeft') {
