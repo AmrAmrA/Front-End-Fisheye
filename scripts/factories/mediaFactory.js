@@ -1,7 +1,8 @@
 class mediaFactory {
   constructor(data) {
-    const { title, image, video, likes, id, photographerId, artist, date } =
-      data;
+    const {
+      title, image, video, likes, id, photographerId, artist, date,
+    } = data;
     this.title = title;
     this.artist = artist;
     this.picture = image
@@ -15,18 +16,17 @@ class mediaFactory {
   }
 
   getuserGalleryCard() {
-    
-    const article = document.createElement("article");
-    this.type = `image`
-    if (this.picture.includes("mp4")) {
-      this.picture = this.picture.replace("mp4", "png");
-      article.classList.add("video");
-      this.type = `video`
+    const article = document.createElement('article');
+    this.type = 'image';
+    if (this.picture.includes('mp4')) {
+      this.picture = this.picture.replace('mp4', 'png');
+      article.classList.add('video');
+      this.type = 'video';
     }
-    article.setAttribute("tabindex", "0");
-    article.setAttribute("title", `${this.title}`);
-    article.setAttribute("date", `${this.date}`);
-    article.setAttribute("likes", `${this.likes}`);
+    article.setAttribute('tabindex', '0');
+    article.setAttribute('title', `${this.title}`);
+    article.setAttribute('date', `${this.date}`);
+    article.setAttribute('likes', `${this.likes}`);
     article.innerHTML = `
       <img src="${this.picture}" class="artist__media" title="${this.title}" alt = "${this.title}" data-type="${this.type}" tabindex = "0" loading ="lazy">
       <header> 

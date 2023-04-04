@@ -1,0 +1,9 @@
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Json 
+package.json 
+package-lock.json
+.eslintrc.json
