@@ -10,7 +10,7 @@ const firstnameInput = document.querySelector('#firstName');
 const lastNameInput = document.querySelector('#lastName');
 const mailInput = document.querySelector('#email');
 const messageArea = document.querySelector('#message');
-const form = document.querySelector('form')
+const form = document.querySelector('form');
 
 // Submit the form and reset the inputs styles and values
 form.addEventListener('submit', handleFormSubmit);

@@ -1,3 +1,7 @@
+/* eslint-disable no-undef */
+/* eslint-disable default-case */
+/* eslint-disable no-loop-func */
+/* eslint-disable no-restricted-syntax */
 const arraySort = [];
 
 async function displayDataAndMedia() {
@@ -19,7 +23,7 @@ displayDataAndMedia().then((data) => {
       (photographer) => photographer.id == PhotographerId,
     );
     if (photographer) {
-      const photographeModel = new photographerFactory(
+      const photographeModel = new PhotographerFactory(
         photographer,
         'onePhotographer',
       );
@@ -43,33 +47,48 @@ displayDataAndMedia().then((data) => {
       const total = (zero += parseInt(allLike.textContent));
       totalOfLikes.textContent = `${total}`;
     }
-
-    const select = document.querySelector('#photo__sort');
-    select.addEventListener('input', (event) => {
-      const { value } = event.target;
-      arraySort.push(mediaCardDOM);
-      switch (value) {
-        case 'title':
-          arraySort.sort((a, b) => a.title > b.title);
-          break;
-        case 'date':
-          arraySort.sort(
-            (a, b) => parseInt(a.getAttribute('date'))
-              > parseInt(b.getAttribute('date')),
-          );
-          break;
-        case 'popularity':
-          arraySort.sort(
-            (a, b) => parseInt(a.getAttribute('likes'))
-              < parseInt(b.getAttribute('likes')),
-          );
-          break;
-      }
-      // Tu mets à jour ton DOM
-      mediaSection.innerHTML = '';
-      for (const element of arraySort) {
-        mediaSection.appendChild(element);
-      }
-    });
+    arraySort.push(mediaCardDOM)
   }
+  addSortListener()
 });
+
+function addSortListener() {
+  const select = document.querySelector('#photo__sort');
+  select.addEventListener('input', (event) => {
+    const { value } = event.target;
+
+    elements = document.querySelectorAll('section article');
+
+    const sortedElements = Array.from(elements).sort((a, b) => {
+      if (event.target.value === 'title') {
+        const nameA = a.getAttribute('title').toUpperCase();
+        const nameB = b.getAttribute('title').toUpperCase();
+
+        if (nameA < nameB) return -1;
+        if (nameA > nameB) return 1;
+
+        return 0;
+      }
+      if (event.target.value === 'date') {
+        const dateA = a.getAttribute('date');
+        const dateB = b.getAttribute('date');
+
+        if (dateA < dateB) return -1;
+        if (dateA > dateB) return 1;
+        return 0;
+      }
+      if (event.target.value === 'popularity') {
+        const likesA = parseInt(a.getAttribute('likes'));
+        const likesB = parseInt(b.getAttribute('likes'));
+
+        if (likesA > likesB) return -1;
+        if (likesA < likesB) return 1;
+        return 0;
+      }
+    })
+    mediaSection.innerHTML = '';
+    for (const element of sortedElements) {
+      mediaSection.appendChild(element);
+    }
+  });
+}

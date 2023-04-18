@@ -1,4 +1,4 @@
-class photographerFactory {
+class PhotographerFactory {
   constructor(data, type) {
     //  Show me all the photographers
     if (type === 'allPhotographers') {
