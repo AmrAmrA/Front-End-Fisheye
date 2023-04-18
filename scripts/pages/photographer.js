@@ -60,31 +60,25 @@ function addSortListener() {
     elements = document.querySelectorAll('section article');
 
     const sortedElements = Array.from(elements).sort((a, b) => {
-      if (event.target.value === 'title') {
-        const nameA = a.getAttribute('title').toUpperCase();
-        const nameB = b.getAttribute('title').toUpperCase();
-
-        if (nameA < nameB) return -1;
-        if (nameA > nameB) return 1;
-
-        return 0;
-      }
-      if (event.target.value === 'date') {
-        const dateA = a.getAttribute('date');
-        const dateB = b.getAttribute('date');
-
-        if (dateA < dateB) return -1;
-        if (dateA > dateB) return 1;
-        return 0;
-      }
-      if (event.target.value === 'popularity') {
-        const likesA = parseInt(a.getAttribute('likes'));
-        const likesB = parseInt(b.getAttribute('likes'));
-
-        if (likesA > likesB) return -1;
-        if (likesA < likesB) return 1;
-        return 0;
-      }
+      switch (value) {
+        case 'title': 
+          const nameA = a.getAttribute('title').toUpperCase();
+          const nameB = b.getAttribute('title').toUpperCase();
+          if (nameA < nameB) return -1;
+          if (nameA > nameB) return 1;
+          break;  
+        case 'date':
+          const dateA = a.getAttribute('date');
+          const dateB = b.getAttribute('date');
+          if (dateA < dateB) return -1;
+          if (dateA > dateB) return 1;
+          break;
+        case 'popularity':
+          const likesA = parseInt(a.getAttribute('likes'));
+          const likesB = parseInt(b.getAttribute('likes'));
+          if (likesA > likesB) return -1;
+          if (likesA < likesB) return 1;
+          break; }
     })
     mediaSection.innerHTML = '';
     for (const element of sortedElements) {
